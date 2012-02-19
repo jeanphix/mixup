@@ -27,8 +27,6 @@
     }
 }
 @mixin cell-base(
-    $colspan: 1,
-    $columnCount: $rowColumnCount,
     $spacing: 2%
 ) {
     display: block;
@@ -51,6 +49,6 @@
     $columnCount: $rowColumnCount,
     $spacing: 2%
 ) {
-    @include cell-base($colspan, $columnCount, $spacing);
+    @include cell-base($spacing);
     @include cell-width($colspan, $columnCount, $spacing);
 }
