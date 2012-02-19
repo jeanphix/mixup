@@ -6,7 +6,7 @@
         <link type="text/css" rel="stylesheet" href="/static/css/mixup/layout.css" />
         <link type="text/css" rel="stylesheet" href="/static/css/mixup/form.css" />
         <link type="text/css" rel="stylesheet" href="/static/css/styles.css" />
-        <title>mixup - sass mixins & helpers</title>
+        <title>mixins</title>
     </head>
     <body>
         <header>
@@ -15,9 +15,9 @@
                 <nav role="navigation">
                     <ul>
                         
-                            <li><a href="/index.html" class="current">home</a></li>
+                            <li><a href="/index.html">home</a></li>
                         
-                            <li><a href="/mixins.html">mixins</a></li>
+                            <li><a href="/mixins.html" class="current">mixins</a></li>
                         
                             <li><a href="/helpers.html">helpers</a></li>
                         
@@ -27,13 +27,30 @@
         </header>
         <section>
             <div>
-                <h1>#sass mixins & helpers</h1>
-<pre><code>@import "mixup/mixin/default/all";
-@import "mixup/mixin/component";
+                <h1>mixins</h1>
 
-a {
-    @include button-simple();
-}</code></pre>
+<h2>layout.scss</h2>
+
+<h3>grid</h3>
+<pre><code>@import "mixin/default/layout";
+@import "mixin/layout";
+
+@media screen and (min-width: 400px) {
+    .row {
+        @include row();
+        > p {
+            @include cell(4);
+            &:last-child {
+                @include cell-width(8);
+            }
+        }
+    }
+}</code>
+</pre>
+<div class="row">
+    <p>I'm a cell.</p>
+    <p>I'm another cell.</p>
+</div>
 
             </div>
         </section>
