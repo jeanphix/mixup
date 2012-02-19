@@ -1,0 +1,56 @@
+@import "style";
+
+
+// Container
+@mixin container() {
+    display: block;
+}
+@mixin container-center($width: $containerWidth) {
+    @include container();
+    width: $width;
+    margin: 0 auto;
+}
+@mixin container-padded($padding: $containerPadding) {
+    @include container();
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+// Grid
+@mixin row() {
+    padding: 0;
+    margin: 0;
+    &:after {
+        clear: both;
+        display: table;
+        content: "";
+    }
+}
+@mixin cell-base(
+    $colspan: 1,
+    $columnCount: $rowColumnCount,
+    $spacing: 2%
+) {
+    display: block;
+    float: left;
+    @include box-sizing(border-box);
+    margin-right: $spacing;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+@mixin cell-width(
+    $colspan: 1,
+    $columnCount: $rowColumnCount,
+    $spacing: 2%
+) {
+    width: floor((100% - ($columnCount - 1) * $spacing) / $columnCount * $colspan + ($colspan - 1) * $spacing);
+}
+@mixin cell(
+    $colspan: 1,
+    $columnCount: $rowColumnCount,
+    $spacing: 2%
+) {
+    @include cell-base($colspan, $columnCount, $spacing);
+    @include cell-width($colspan, $columnCount, $spacing);
+}

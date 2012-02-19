@@ -1,0 +1,26 @@
+@import "../mixin/component";
+
+
+form {
+    @include box-simple();
+    @include form ();
+    input[type=submit] {
+        @include button-gradient();
+    }
+    label:first-child {
+        display: block;
+    }
+}
+@media screen and (min-width: 800px) {
+    form {
+        label:first-child {
+            display: inline-block;
+            width: 250px;
+            margin-right: 10px;
+            text-align: right;
+        }
+        input[type=checkbox]:first-child {
+            margin-left: 265px;
+        }
+    }
+}

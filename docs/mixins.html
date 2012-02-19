@@ -1,0 +1,29 @@
+---
+layout: base
+title: mixins
+---
+
+<h1>mixins</h1>
+
+<h2>layout.scss</h2>
+
+<h3>grid</h3>
+<pre><code>@import "mixin/default/layout";
+@import "mixin/layout";
+
+@media screen and (min-width: 400px) {
+    .row {
+        @include row();
+        > p {
+            @include cell(4);
+            &:last-child {
+                @include cell-width(8);
+            }
+        }
+    }
+}</code>
+</pre>
+<div class="row">
+    <p>I'm a cell.</p>
+    <p>I'm another cell.</p>
+</div>

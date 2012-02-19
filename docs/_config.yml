@@ -1,0 +1,7 @@
+navigation:
+- text: home
+  url: /index.html
+- text: mixins
+  url: /mixins.html
+- text: helpers
+  url: /helpers.html

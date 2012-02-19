@@ -1,0 +1,144 @@
+@import "style";
+
+
+// Button
+@mixin button(
+    $padding: $buttonPadding,
+    $borderColor: $buttonBorderColor,
+    $radius: $buttonRadius,
+    $shadow: $buttonShadow
+) {
+    display: inline-block;
+    padding: $padding;
+    @include border($borderColor);
+    @include border-radius($radius);
+    @include box-shadow($shadow);
+    text-decoration: none;
+    cursor: pointer;
+}
+@mixin button-simple(
+    $padding: $buttonPadding,
+    $borderColor: $buttonBorderColor,
+    $radius: $buttonRadius,
+    $shadow: $buttonShadow,
+    $background: $buttonBackground
+) {
+    @include button($padding, $borderColor, $radius, $shadow);
+    background: $background;
+}
+@mixin button-gradient(
+    $borderColor: $buttonBorderColor,
+    $padding: $buttonPadding,
+    $radius: $buttonRadius,
+    $shadow: $buttonShadow,
+    $startColor: $buttonStartColor,
+    $endColor: $buttonEndColor
+) {
+    @include button($padding, $borderColor, $radius, $shadow);
+    @include gradient-vertical($startColor, $endColor);
+}
+
+// Boxe
+@mixin box(
+    $padding: $boxPadding,
+    $borderColor: $boxBorderColor,
+    $radius: $boxRadius
+) {
+    padding: $padding;
+    @include border($borderColor);
+    @include border-radius($radius);
+    > *:first-child {
+        margin-top: 0;
+    }
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+@mixin box-simple(
+    $padding: $boxPadding,
+    $borderColor: $boxBorderColor,
+    $radius: $boxRadius,
+    $background: $boxBackground
+) {
+    @include box($padding, $borderColor, $radius);
+    background: $background;
+}
+
+// Navigation
+@mixin navigation-horizontal(
+    $color: $navigationColor,
+    $height: $navigationHorizontalHeight,
+    $currentBackgroundColor: $navigationCurrentBackgroundColor,
+    $focusColor: $navigationFocusColor,
+    $activeClass: 'current'
+) {
+    display: block;
+    line-height: $height;
+    * {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    a {
+        height: $height;
+        padding: 0 0.5em;
+        text-decoration: none;
+        color: $color;
+        &:visited {
+            color: $color;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            outline: none;
+            color: $focusColor;
+        }
+    }
+    .#{$activeClass} {
+        background: $currentBackgroundColor;
+        &, &:visited {
+            color: $focusColor;
+        }
+    }
+}
+
+// Form
+@mixin fields (
+    $width: $formFieldWidth,
+    $borderColor: $formFieldBorderColor,
+    $background: $formFieldBackground,
+    $radius: $formFieldRadius
+) {
+    input,
+    textarea,
+    select {
+        display: inline-block;
+        @include box-sizing(border-box);
+        width: $width;
+        padding: 0.3em;
+        @include border($borderColor);
+        @include border-radius($radius);
+        background: $background;
+    }
+    input[type=checkbox] {
+        width: auto;
+    }
+}
+@mixin form(
+    $fieldWidth: $formFieldWidth,
+    $fieldBorderColor: $formFieldBorderColor,
+    $fieldBackground: $formFieldBackground,
+    $fieldRadius: $formFieldRadius,
+    $lineHeight: $formLineHeight
+) {
+    line-height: $lineHeight;
+    fieldset {
+        padding: 0;
+        border: 0;
+        @include fields($fieldWidth, $fieldBorderColor, $fieldBackground, $fieldRadius);
+    }
+    input[type=submit] {
+        @include button-gradient();
+    }
+}
+
