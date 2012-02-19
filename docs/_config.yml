@@ -1,7 +1,7 @@
 navigation:
 - text: home
-  url: /index.html
+  url: index.html
 - text: mixins
-  url: /mixins.html
+  url: mixins.html
 - text: helpers
-  url: /helpers.html
+  url: helpers.html

@@ -2,10 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link type="text/css" rel="stylesheet" href="/static/css/normalize/normalize.css" />
-        <link type="text/css" rel="stylesheet" href="/static/css/mixup/layout.css" />
-        <link type="text/css" rel="stylesheet" href="/static/css/mixup/form.css" />
-        <link type="text/css" rel="stylesheet" href="/static/css/styles.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/normalize/normalize.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/mixup/layout.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/mixup/form.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/styles.css" />
         <title>{{ page.title }}</title>
     </head>
     <body>
@@ -15,7 +15,7 @@
                 <nav role="navigation">
                     <ul>
                         {% for node in site.navigation %}
-                            <li><a href="{{ node.url }}"{% if page.url == node.url %} class="current"{% endif %}>{{ node.text }}</a></li>
+                            <li><a href="{{ node.url }}"{% if page.url contains node.url %} class="current"{% endif %}>{{ node.text }}</a></li>
                         {% endfor %}
                     </ul>
                 </nav>
