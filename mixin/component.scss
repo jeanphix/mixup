@@ -38,7 +38,7 @@
     @include gradient-vertical($startColor, $endColor);
 }
 
-// Boxe
+// Box
 @mixin box(
     $padding: $boxPadding,
     $borderColor: $boxBorderColor,
