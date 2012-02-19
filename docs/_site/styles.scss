@@ -1,0 +1,23 @@
+@import "../mixin/default/all";
+@import "../mixin/layout";
+@import "../mixin/component";
+
+
+pre {
+    font-size: 90%;
+}
+
+.row > p {
+    @include box-simple();
+}
+@media screen and (min-width: 400px) {
+    .row {
+        @include row();
+        > p {
+            @include cell(4);
+            &:last-child {
+                @include cell-width(8);
+            }
+        }
+    }
+}
