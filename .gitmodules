@@ -4,3 +4,6 @@
 [submodule "docs/static/js/respond"]
 	path = docs/static/js/respond
 	url = https://github.com/scottjehl/Respond
+[submodule "docs/static/js/selectivizr"]
+	path = docs/static/js/selectivizr
+	url = https://github.com/keithclark/selectivizr
