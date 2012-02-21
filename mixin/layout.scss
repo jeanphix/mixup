@@ -12,6 +12,7 @@
 }
 @mixin container-padded($padding: $containerPadding) {
     @include container();
+    width: auto;
     padding-left: $padding;
     padding-right: $padding;
 }

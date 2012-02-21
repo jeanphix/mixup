@@ -4,22 +4,22 @@ body {
   body > section > div,
   body > footer > div {
     display: block;
-    padding-left: 2em;
-    padding-right: 2em; }
+    width: 955px;
+    margin: 0 auto; }
 
 a {
   color: #08c; }
 
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 1000px) {
   body {
     padding: 0; }
     body > header > div,
     body > section > div,
     body > footer > div {
       display: block;
-      width: 955px;
-      margin: 0 auto;
-      padding: 0; } }
+      width: auto;
+      padding-left: 2em;
+      padding-right: 2em; } }
 body > header {
   color: #fff;
   padding: 0;
