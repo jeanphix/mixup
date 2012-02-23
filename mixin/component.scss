@@ -4,12 +4,14 @@
 // Button
 @mixin button(
     $padding: $buttonPadding,
+    $color: $buttonColor,
     $borderColor: $buttonBorderColor,
     $radius: $buttonRadius,
     $shadow: $buttonShadow
 ) {
     display: inline-block;
     padding: $padding;
+    color: $buttonColor;
     @include border($borderColor);
     @include border-radius($radius);
     @include box-shadow($shadow);
@@ -18,23 +20,25 @@
 }
 @mixin button-simple(
     $padding: $buttonPadding,
+    $color: $buttonColor,
     $borderColor: $buttonBorderColor,
     $radius: $buttonRadius,
     $shadow: $buttonShadow,
     $background: $buttonBackground
 ) {
-    @include button($padding, $borderColor, $radius, $shadow);
+    @include button($padding, $color, $borderColor, $radius, $shadow);
     background: $background;
 }
 @mixin button-gradient(
     $borderColor: $buttonBorderColor,
     $padding: $buttonPadding,
+    $color: $buttonColor,
     $radius: $buttonRadius,
     $shadow: $buttonShadow,
     $startColor: $buttonStartColor,
     $endColor: $buttonEndColor
 ) {
-    @include button($padding, $borderColor, $radius, $shadow);
+    @include button($padding, $color, $borderColor, $radius, $shadow);
     @include gradient-vertical($startColor, $endColor);
 }
 
