@@ -19,8 +19,13 @@ form {
             margin-right: 10px;
             text-align: right;
         }
-        input[type=checkbox]:first-child {
+        input[type=checkbox]:first-child,
+        .#{$formErrorClass} {
             margin-left: 265px;
+        }
+        .#{$formErrorClass} {
+            padding: 0;
+            list-style: none;
         }
     }
 }
