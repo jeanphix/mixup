@@ -1,4 +1,6 @@
 form {
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding: 1em;
   -webkit-border-radius: 0.5em;
   -moz-border-radius: 0.5em;

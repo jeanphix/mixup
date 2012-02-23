@@ -67,6 +67,8 @@
     $padding: $boxPadding,
     $radius: $boxRadius
 ) {
+    margin-top: 1em;
+    margin-bottom: 1em;
     padding: $padding;
     @include border-radius($radius);
     > *:first-child {

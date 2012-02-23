@@ -3,10 +3,6 @@
 @import "../mixin/component";
 
 
-pre {
-    font-size: 90%;
-}
-
 .row > p {
     @include box();
 }
@@ -20,6 +16,10 @@ pre {
             }
         }
     }
+}
+
+.mixin {
+    @include box();
 }
 
 .demo {

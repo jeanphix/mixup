@@ -20,7 +20,7 @@
 // Grid
 @mixin row() {
     padding: 0;
-    margin: 0;
+    margin: 0 0 1em 0;
     &:after {
         clear: both;
         display: table;
@@ -34,6 +34,8 @@
     float: left;
     @include box-sizing(border-box);
     margin-right: $spacing;
+    margin-top: 0;
+    margin-bottom: 0;
     &:last-child {
         margin-right: 0;
     }

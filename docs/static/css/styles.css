@@ -1,7 +1,6 @@
-pre {
-  font-size: 90%; }
-
 .row > p {
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding: 1em;
   -webkit-border-radius: 0.5em;
   -moz-border-radius: 0.5em;
@@ -17,7 +16,7 @@ pre {
 @media screen and (min-width: 400px) {
   .row {
     padding: 0;
-    margin: 0; }
+    margin: 0 0 1em 0; }
     .row:after {
       clear: both;
       display: table;
@@ -30,11 +29,28 @@ pre {
       -o-box-sizing: border-box;
       box-sizing: border-box;
       margin-right: 2%;
+      margin-top: 0;
+      margin-bottom: 0;
       width: 32%; }
       .row > p:last-child {
         margin-right: 0; }
       .row > p:last-child {
         width: 66%; } }
+.mixin {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  color: inherit;
+  border: 1px #cccccc solid;
+  background: #f5f5f5; }
+  .mixin > *:first-child {
+    margin-top: 0; }
+  .mixin > *:last-child {
+    margin-bottom: 0; }
+
 .demo .button {
   display: inline-block;
   padding: 0.4em 1em;
