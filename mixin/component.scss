@@ -2,50 +2,74 @@
 
 
 // Button
-@mixin button(
+@mixin button-base(
     $padding: $buttonPadding,
+    $color: $buttonColor,
+    $hoverColor: $buttonHoverColor,
     $borderColor: $buttonBorderColor,
     $radius: $buttonRadius,
     $shadow: $buttonShadow
 ) {
     display: inline-block;
     padding: $padding;
+    color: $buttonColor;
     @include border($borderColor);
     @include border-radius($radius);
     @include box-shadow($shadow);
     text-decoration: none;
     cursor: pointer;
+    &:hover {
+        color: $hoverColor;
+    }
 }
-@mixin button-simple(
+@mixin button(
     $padding: $buttonPadding,
+    $color: $buttonColor,
+    $hoverColor: $buttonHoverColor,
     $borderColor: $buttonBorderColor,
     $radius: $buttonRadius,
     $shadow: $buttonShadow,
     $background: $buttonBackground
 ) {
-    @include button($padding, $borderColor, $radius, $shadow);
+    @include button-base(
+        $padding,
+        $color,
+        $hoverColor,
+        $borderColor,
+        $radius,
+        $shadow
+    );
     background: $background;
 }
 @mixin button-gradient(
-    $borderColor: $buttonBorderColor,
     $padding: $buttonPadding,
+    $color: $buttonColor,
+    $hoverColor: $buttonHoverColor,
+    $borderColor: $buttonBorderColor,
     $radius: $buttonRadius,
     $shadow: $buttonShadow,
     $startColor: $buttonStartColor,
     $endColor: $buttonEndColor
 ) {
-    @include button($padding, $borderColor, $radius, $shadow);
+    @include button-base(
+        $padding,
+        $color,
+        $hoverColor,
+        $borderColor,
+        $radius,
+        $shadow
+    );
     @include gradient-vertical($startColor, $endColor);
 }
 
 // Box
-@mixin box(
+@mixin box-base(
     $padding: $boxPadding,
-    $borderColor: $boxBorderColor,
     $radius: $boxRadius
 ) {
+    margin-top: 1em;
+    margin-bottom: 1em;
     padding: $padding;
-    @include border($borderColor);
     @include border-radius($radius);
     > *:first-child {
         margin-top: 0;
@@ -54,14 +78,38 @@
         margin-bottom: 0;
     }
 }
-@mixin box-simple(
+@mixin box-colors(
+    $color: $boxColor,
+    $borderColor: $boxBorderColor,
+    $background: $boxBackground
+) {
+    color: $color;
+    @include border($borderColor);
+    background: $background;
+}
+@mixin box(
     $padding: $boxPadding,
+    $color: $boxColor,
     $borderColor: $boxBorderColor,
     $radius: $boxRadius,
     $background: $boxBackground
 ) {
-    @include box($padding, $borderColor, $radius);
-    background: $background;
+    @include box-base($padding, $radius);
+    @include box-colors($color, $borderColor, $background);
+}
+@mixin box-colors-success(
+    $color: $successColor,
+    $borderColor: $successColor,
+    $background: $successBackground
+) {
+    @include box-colors($color, $borderColor, $background);
+}
+@mixin box-colors-error(
+    $color: $errorColor,
+    $borderColor: $errorColor,
+    $background: $errorBackground
+) {
+    @include box-colors($color, $borderColor, $background);
 }
 
 // Navigation
@@ -135,7 +183,12 @@
     fieldset {
         padding: 0;
         border: 0;
-        @include fields($fieldWidth, $fieldBorderColor, $fieldBackground, $fieldRadius);
+        @include fields(
+            $fieldWidth,
+            $fieldBorderColor,
+            $fieldBackground,
+            $fieldRadius
+        );
     }
     input[type=submit] {
         @include button-gradient();

@@ -1,14 +1,18 @@
-@import "../mixin/layout.scss";
-@import "../mixin/style.scss";
-@import "../mixin/component.scss";
+@import "../mixin/layout";
+@import "../mixin/style";
+@import "../mixin/component";
 
 
 body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $fontColor;
     padding: 0;
+    @if $bodyBackground != #fff { background: $bodyBackground; }
     > header > div,
     > section > div,
     > footer > div {
-        @include container-padded();
+        @include container-center();
     }
 }
 
@@ -16,14 +20,13 @@ a {
     color: #08c;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 1000px) {
     body {
         padding: 0;
         > header > div,
         > section > div,
         > footer > div {
-            @include container-center();
-            padding: 0;
+            @include container-padded();
         }
     }
 }

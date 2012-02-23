@@ -2,13 +2,21 @@
 
 
 form {
-    @include box-simple();
+    @include box();
     @include form ();
     input[type=submit] {
         @include button-gradient();
     }
     label:first-child {
         display: block;
+    }
+    .#{$formErrorClass} {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+        line-height: 1.3em;
+        list-style: none;
+        color: $formErrorColor;
     }
 }
 @media screen and (min-width: 800px) {
@@ -19,7 +27,8 @@ form {
             margin-right: 10px;
             text-align: right;
         }
-        input[type=checkbox]:first-child {
+        input[type=checkbox]:first-child,
+        .#{$formErrorClass} {
             margin-left: 265px;
         }
     }
