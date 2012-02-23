@@ -2,7 +2,7 @@
 
 
 // Button
-@mixin button(
+@mixin button-base(
     $padding: $buttonPadding,
     $color: $buttonColor,
     $hoverColor: $buttonHoverColor,
@@ -22,7 +22,7 @@
         color: $hoverColor;
     }
 }
-@mixin button-simple(
+@mixin button(
     $padding: $buttonPadding,
     $color: $buttonColor,
     $hoverColor: $buttonHoverColor,
@@ -31,7 +31,7 @@
     $shadow: $buttonShadow,
     $background: $buttonBackground
 ) {
-    @include button(
+    @include button-base(
         $padding,
         $color,
         $hoverColor,
@@ -51,7 +51,7 @@
     $startColor: $buttonStartColor,
     $endColor: $buttonEndColor
 ) {
-    @include button(
+    @include button-base(
         $padding,
         $color,
         $hoverColor,
