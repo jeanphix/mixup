@@ -63,13 +63,11 @@
 }
 
 // Box
-@mixin box(
+@mixin box-base(
     $padding: $boxPadding,
-    $borderColor: $boxBorderColor,
     $radius: $boxRadius
 ) {
     padding: $padding;
-    @include border($borderColor);
     @include border-radius($radius);
     > *:first-child {
         margin-top: 0;
@@ -78,14 +76,38 @@
         margin-bottom: 0;
     }
 }
-@mixin box-simple(
+@mixin box-colors(
+    $color: $boxColor,
+    $borderColor: $boxBorderColor,
+    $background: $boxBackground
+) {
+    color: $color;
+    @include border($borderColor);
+    background: $background;
+}
+@mixin box(
     $padding: $boxPadding,
+    $color: $boxColor,
     $borderColor: $boxBorderColor,
     $radius: $boxRadius,
     $background: $boxBackground
 ) {
-    @include box($padding, $borderColor, $radius);
-    background: $background;
+    @include box-base($padding, $radius);
+    @include box-colors($color, $borderColor, $background);
+}
+@mixin box-colors-success(
+    $color: $successColor,
+    $borderColor: $successColor,
+    $background: $successBackground
+) {
+    @include box-colors($color, $borderColor, $background);
+}
+@mixin box-colors-error(
+    $color: $errorColor,
+    $borderColor: $errorColor,
+    $background: $errorBackground
+) {
+    @include box-colors($color, $borderColor, $background);
 }
 
 // Navigation
@@ -159,7 +181,12 @@
     fieldset {
         padding: 0;
         border: 0;
-        @include fields($fieldWidth, $fieldBorderColor, $fieldBackground, $fieldRadius);
+        @include fields(
+            $fieldWidth,
+            $fieldBorderColor,
+            $fieldBackground,
+            $fieldRadius
+        );
     }
     input[type=submit] {
         @include button-gradient();

@@ -11,6 +11,7 @@ $buttonEndColor: #e6e6e6;
 
 // Box
 $boxPadding: 1em;
+$boxColor: inherit;
 $boxBackground: #f5f5f5;
 $boxBorderColor: #ccc;
 $boxRadius: 0.5em;
@@ -29,4 +30,7 @@ $formFieldRadius: 3px;
 $formLineHeight: 2em;
 
 // Alert
+$successColor: #0f0;
+$successBackground: #bcffbc;
 $errorColor: #f00;
+$errorBackground: #ffc6c6;

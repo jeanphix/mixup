@@ -2,7 +2,7 @@
 
 
 form {
-    @include box-simple();
+    @include box();
     @include form ();
     input[type=submit] {
         @include button-gradient();
