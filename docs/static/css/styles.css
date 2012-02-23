@@ -51,3 +51,26 @@ pre {
   background: #fafafa; }
   .demo .button:hover {
     color: inherit; }
+.demo .button-gradient {
+  display: inline-block;
+  padding: 0.4em 1em;
+  color: inherit;
+  border: 1px #cccccc solid;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 0.3em;
+  -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, white, #e6e6e6);
+  background-image: -ms-linear-gradient(top, white, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, white, #e6e6e6);
+  background-image: -o-linear-gradient(top, white, #e6e6e6);
+  background-image: linear-gradient(top, white, #e6e6e6);
+  background-repeat: repeat-x; }
+  .demo .button-gradient:hover {
+    color: inherit; }

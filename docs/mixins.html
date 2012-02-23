@@ -9,7 +9,7 @@ title: mixins
 
 <h3>buttons</h3>
 <div class="definition">
-    <h4>button</h4>
+    <h4>button()</h4>
     <p>Creates a basic button.</p>
     <h5>parameters:</h5>
     <ul class="parameter">
@@ -18,6 +18,8 @@ title: mixins
         <li>$hoverColor</li>
         <li>$borderColor</li>
         <li>$radius</li>
+        <li>$shadow</li>
+        <li>$background</li>
     </ul>
     <h5>code</h5>
     <pre><code>input[type=submit] { @include button(); }</code></pre>
@@ -25,6 +27,27 @@ title: mixins
     <p class="demo"><a href="#" class="button">I'm a link</a></p>
     <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
 </div>
+<div class="definition">
+    <h4>button-gradient()</h4>
+    <p>Creates a button with gradient background.</p>
+    <h5>parameters:</h5>
+    <ul class="parameter">
+        <li>$padding</li>
+        <li>$color</li>
+        <li>$hoverColor</li>
+        <li>$borderColor</li>
+        <li>$radius</li>
+        <li>$shadow</li>
+        <li>$startColor</li>
+        <li>$endColor</li>
+    </ul>
+    <h5>code</h5>
+    <pre><code>input[type=submit] { @include button-gradient(); }</code></pre>
+    <h5>samples</h5>
+    <p class="demo"><a href="#" class="button-gradient">I'm a link</a></p>
+    <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
+</div>
+
 <h2>layout.scss</h2>
 
 <h3>grid</h3>

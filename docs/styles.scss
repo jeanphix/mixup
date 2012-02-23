@@ -26,4 +26,7 @@ pre {
     .button {
         @include button();
     }
+    .button-gradient {
+        @include button-gradient();
+    }
 }
