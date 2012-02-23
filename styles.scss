@@ -3,12 +3,8 @@
 @import "../mixin/component";
 
 
-pre {
-    font-size: 90%;
-}
-
 .row > p {
-    @include box-simple();
+    @include box();
 }
 @media screen and (min-width: 400px) {
     .row {
@@ -19,5 +15,18 @@ pre {
                 @include cell-width(8);
             }
         }
+    }
+}
+
+.mixin {
+    @include box();
+}
+
+.demo {
+    .button {
+        @include button();
+    }
+    .button-gradient {
+        @include button-gradient();
     }
 }

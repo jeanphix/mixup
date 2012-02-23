@@ -6,6 +6,7 @@
         <link type="text/css" rel="stylesheet" href="static/css/mixup/layout.css" />
         <link type="text/css" rel="stylesheet" href="static/css/mixup/form.css" />
         <link type="text/css" rel="stylesheet" href="static/css/styles.css" />
+        <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/ir_black.min.css">
         <title>mixins</title>
         <!--[if lt IE 9]>
             <script src="static/js/html5-ie.js"></script>
@@ -35,7 +36,7 @@
             <div>
                 <h1>mixins</h1>
 
-<h2>layout.scss</h2>
+<h2>layout</h2>
 
 <h3>grid</h3>
 <pre><code>@import "mixin/default/layout";
@@ -58,6 +59,69 @@
     <p>I'm another cell.</p>
 </div>
 
+<h2>components</h2>
+
+<h3>buttons</h3>
+<div class="mixin">
+    <h4>button()</h4>
+    <p>Creates a basic button.</p>
+    <h5>parameters:</h5>
+    <ul class="parameter">
+        <li>$padding</li>
+        <li>$color</li>
+        <li>$hoverColor</li>
+        <li>$borderColor</li>
+        <li>$radius</li>
+        <li>$shadow</li>
+        <li>$background</li>
+    </ul>
+    <h5>code</h5>
+    <pre><code>input[type=submit] { @include button(); }</code></pre>
+    <h5>samples</h5>
+    <p class="demo"><a href="#" class="button">I'm a link</a></p>
+    <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
+</div>
+<div class="mixin">
+    <h4>button-gradient()</h4>
+    <p>Creates a button with gradient background.</p>
+    <h5>parameters:</h5>
+    <ul class="parameter">
+        <li>$padding</li>
+        <li>$color</li>
+        <li>$hoverColor</li>
+        <li>$borderColor</li>
+        <li>$radius</li>
+        <li>$shadow</li>
+        <li>$startColor</li>
+        <li>$endColor</li>
+    </ul>
+    <h5>code</h5>
+    <pre><code>input[type=submit] { @include button-gradient(); }</code></pre>
+    <h5>samples</h5>
+    <p class="demo"><a href="#" class="button-gradient">I'm a link</a></p>
+    <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
+</div>
+<h3>boxes</h3>
+<div class="mixin">
+    <h4>box-base()</h4>
+    <p>Provides common box styles.</p>
+    <h5>parameters</h5>
+    <ul class="parameter">
+        <li>$padding</li>
+        <li>$radius</li>
+    </ul>
+</div>
+<div class="mixin">
+    <h4>box-colors()</h4>
+    <p>Provides color related box styles.</p>
+    <h5>parameters</h5>
+    <ul class="parameter">
+        <li>$color</li>
+        <li>$borderColor</li>
+        <li>$background</li>
+    </ul>
+</div>
+
             </div>
         </section>
         <footer>
@@ -66,6 +130,8 @@
                 <a href="https://github.com/jeanphix/mixup"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
             </div>
         </footer>
+        <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+        <script src="static/js/demo.js"></script>
     </body>
 </html>
 
