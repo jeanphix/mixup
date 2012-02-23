@@ -1,10 +1,11 @@
-@import "../mixin/layout.scss";
-@import "../mixin/style.scss";
-@import "../mixin/component.scss";
+@import "../mixin/layout";
+@import "../mixin/style";
+@import "../mixin/component";
 
 
 body {
     padding: 0;
+    @if $bodyBackground != #fff { background: $bodyBackground; }
     > header > div,
     > section > div,
     > footer > div {
