@@ -10,6 +10,13 @@ form {
     label:first-child {
         display: block;
     }
+    .#{$formErrorClass} {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+        list-style: none;
+        color: $formErrorColor;
+    }
 }
 @media screen and (min-width: 800px) {
     form {
@@ -22,10 +29,6 @@ form {
         input[type=checkbox]:first-child,
         .#{$formErrorClass} {
             margin-left: 265px;
-        }
-        .#{$formErrorClass} {
-            padding: 0;
-            list-style: none;
         }
     }
 }
