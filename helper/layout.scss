@@ -6,6 +6,7 @@
 body {
     font-family: $fontFamily;
     font-size: $fontSize;
+    color: $fontColor;
     padding: 0;
     @if $bodyBackground != #fff { background: $bodyBackground; }
     > header > div,
