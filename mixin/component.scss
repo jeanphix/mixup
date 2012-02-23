@@ -5,6 +5,7 @@
 @mixin button(
     $padding: $buttonPadding,
     $color: $buttonColor,
+    $hoverColor: $buttonHoverColor,
     $borderColor: $buttonBorderColor,
     $radius: $buttonRadius,
     $shadow: $buttonShadow
@@ -17,28 +18,47 @@
     @include box-shadow($shadow);
     text-decoration: none;
     cursor: pointer;
+    &:hover {
+        color: $hoverColor;
+    }
 }
 @mixin button-simple(
     $padding: $buttonPadding,
     $color: $buttonColor,
+    $hoverColor: $buttonHoverColor,
     $borderColor: $buttonBorderColor,
     $radius: $buttonRadius,
     $shadow: $buttonShadow,
     $background: $buttonBackground
 ) {
-    @include button($padding, $color, $borderColor, $radius, $shadow);
+    @include button(
+        $padding,
+        $color,
+        $hoverColor,
+        $borderColor,
+        $radius,
+        $shadow
+    );
     background: $background;
 }
 @mixin button-gradient(
-    $borderColor: $buttonBorderColor,
     $padding: $buttonPadding,
     $color: $buttonColor,
+    $hoverColor: $buttonHoverColor,
+    $borderColor: $buttonBorderColor,
     $radius: $buttonRadius,
     $shadow: $buttonShadow,
     $startColor: $buttonStartColor,
     $endColor: $buttonEndColor
 ) {
-    @include button($padding, $color, $borderColor, $radius, $shadow);
+    @include button(
+        $padding,
+        $color,
+        $hoverColor,
+        $borderColor,
+        $radius,
+        $shadow
+    );
     @include gradient-vertical($startColor, $endColor);
 }
 
