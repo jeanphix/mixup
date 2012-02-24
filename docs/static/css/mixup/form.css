@@ -68,6 +68,51 @@
         - $background
     code: body > section > div { @include box(); }
 */
+/*
+    namespace: boxes
+    description: Adds success colors to a box.
+    params:
+        - $color
+        - $borderColor
+        - $background
+*/
+/*
+    namespace: boxes
+    description: Adds error colors to a box.
+    params:
+        - $color
+        - $borderColor
+        - $errorBackground
+*/
+/*
+    namespace: navigation
+    description: Sets an element as an horizontal navigation block.
+    params:
+        - $color
+        - $height
+        - $currentBackgroundColor
+        - $focusColor
+        - $activeClass
+*/
+/*
+    namespace: forms
+    description: Adds form fields styles.
+    params:
+        - $width
+        - $borderColor
+        - $background
+        - $radius
+*/
+/*
+    namespace: forms
+    description: Adds form styles.
+    params:
+        - $fieldWidth
+        - $fieldBorderColor
+        - $fieldBackground
+        - $fieldRadius
+        - $lineHeight
+*/
 form {
   margin-top: 1em;
   margin-bottom: 1em;

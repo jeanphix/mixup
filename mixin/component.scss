@@ -164,6 +164,14 @@
     @include box-base($padding, $radius);
     @include box-colors($color, $borderColor, $background);
 }
+/*
+    namespace: boxes
+    description: Adds success colors to a box.
+    params:
+        - $color
+        - $borderColor
+        - $background
+*/
 @mixin box-colors-success(
     $color: $successColor,
     $borderColor: $successColor,
@@ -171,6 +179,14 @@
 ) {
     @include box-colors($color, $borderColor, $background);
 }
+/*
+    namespace: boxes
+    description: Adds error colors to a box.
+    params:
+        - $color
+        - $borderColor
+        - $errorBackground
+*/
 @mixin box-colors-error(
     $color: $errorColor,
     $borderColor: $errorColor,
@@ -179,7 +195,16 @@
     @include box-colors($color, $borderColor, $background);
 }
 
-// Navigation
+/*
+    namespace: navigation
+    description: Sets an element as an horizontal navigation block.
+    params:
+        - $color
+        - $height
+        - $currentBackgroundColor
+        - $focusColor
+        - $activeClass
+*/
 @mixin navigation-horizontal(
     $color: $navigationColor,
     $height: $navigationHorizontalHeight,
@@ -217,7 +242,15 @@
     }
 }
 
-// Form
+/*
+    namespace: forms
+    description: Adds form fields styles.
+    params:
+        - $width
+        - $borderColor
+        - $background
+        - $radius
+*/
 @mixin fields (
     $width: $formFieldWidth,
     $borderColor: $formFieldBorderColor,
@@ -239,6 +272,16 @@
         width: auto;
     }
 }
+/*
+    namespace: forms
+    description: Adds form styles.
+    params:
+        - $fieldWidth
+        - $fieldBorderColor
+        - $fieldBackground
+        - $fieldRadius
+        - $lineHeight
+*/
 @mixin form(
     $fieldWidth: $formFieldWidth,
     $fieldBorderColor: $formFieldBorderColor,
