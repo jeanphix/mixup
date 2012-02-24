@@ -36,91 +36,336 @@
             <div>
                 <h1>mixins</h1>
 
-<h2>layout</h2>
-
-<h3>grid</h3>
-<pre><code>@import "mixin/default/layout";
-@import "mixin/layout";
-
-@media screen and (min-width: 400px) {
+    <h2>layout</h2>
+    
+        <h3>containers</h3>
+        
+            <div class="mixin">
+                <h4>container()</h4>
+                
+                    <p>Base styles for containers.</p>
+                
+                
+                
+                
+            </div>
+        
+            <div class="mixin">
+                <h4>container-center()</h4>
+                
+                    <p>Sets an element as a center block.</p>
+                
+                
+                    <h5>parameters</h5>
+                    <ul class="parameters">
+                        
+                            <li>$width</li>
+                        
+                    </ul>
+                
+                
+                    <h5>sample code</h5>
+                    <pre><code>body > section { @include container-center(); }</code></pre>
+                
+                
+            </div>
+        
+            <div class="mixin">
+                <h4>container-padded()</h4>
+                
+                    <p>Sets an element as a padded block.</p>
+                
+                
+                    <h5>parameters</h5>
+                    <ul class="parameters">
+                        
+                            <li>$padding</li>
+                        
+                    </ul>
+                
+                
+                    <h5>sample code</h5>
+                    <pre><code>body > section { @include container-padded(); }</code></pre>
+                
+                
+            </div>
+        
+    
+        <h3>grids</h3>
+        
+            <div class="mixin">
+                <h4>row()</h4>
+                
+                    <p>Sets an element as a cell container.</p>
+                
+                
+                
+                
+            </div>
+        
+            <div class="mixin">
+                <h4>cell-base()</h4>
+                
+                    <p>Adds common cell styles.</p>
+                
+                
+                    <h5>parameters</h5>
+                    <ul class="parameters">
+                        
+                            <li>$spacing</li>
+                        
+                    </ul>
+                
+                
+                
+            </div>
+        
+            <div class="mixin">
+                <h4>cell-width()</h4>
+                
+                    <p>Adds cell dimension styles.</p>
+                
+                
+                    <h5>parameters</h5>
+                    <ul class="parameters">
+                        
+                            <li>$colspan</li>
+                        
+                            <li>$columnCount</li>
+                        
+                            <li>$spacing</li>
+                        
+                    </ul>
+                
+                
+                
+            </div>
+        
+            <div class="mixin">
+                <h4>cell()</h4>
+                
+                    <p>Sets an element as cell.</p>
+                
+                
+                    <h5>parameters</h5>
+                    <ul class="parameters">
+                        
+                            <li>$colspan</li>
+                        
+                            <li>$columnCount</li>
+                        
+                            <li>$spacing</li>
+                        
+                    </ul>
+                
+                
+                    <h5>sample code</h5>
+                    <pre><code>@import "mixin/default/layout"; @import "mixin/layout"; @media screen and (min-width: 400px) {
     .row {
         @include row();
-        > p {
+         {
             @include cell(4);
             &:last-child {
                 @include cell-width(8);
             }
         }
     }
-}</code>
-</pre>
-<div class="row">
+}
+</code></pre>
+                
+                
+                    <h5>sample</h5>
+                    <div class="row">
     <p>I'm a cell.</p>
     <p>I'm another cell.</p>
 </div>
 
-<h2>components</h2>
+                
+            </div>
+        
+    
 
-<h3>buttons</h3>
-<div class="mixin">
-    <h4>button()</h4>
-    <p>Creates a basic button.</p>
-    <h5>parameters:</h5>
-    <ul class="parameter">
-        <li>$padding</li>
-        <li>$color</li>
-        <li>$hoverColor</li>
-        <li>$borderColor</li>
-        <li>$radius</li>
-        <li>$shadow</li>
-        <li>$background</li>
-    </ul>
-    <h5>code</h5>
-    <pre><code>input[type=submit] { @include button(); }</code></pre>
-    <h5>samples</h5>
-    <p class="demo"><a href="#" class="button">I'm a link</a></p>
-    <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
-</div>
-<div class="mixin">
-    <h4>button-gradient()</h4>
-    <p>Creates a button with gradient background.</p>
-    <h5>parameters:</h5>
-    <ul class="parameter">
-        <li>$padding</li>
-        <li>$color</li>
-        <li>$hoverColor</li>
-        <li>$borderColor</li>
-        <li>$radius</li>
-        <li>$shadow</li>
-        <li>$startColor</li>
-        <li>$endColor</li>
-    </ul>
-    <h5>code</h5>
-    <pre><code>input[type=submit] { @include button-gradient(); }</code></pre>
-    <h5>samples</h5>
-    <p class="demo"><a href="#" class="button-gradient">I'm a link</a></p>
-    <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
-</div>
-<h3>boxes</h3>
-<div class="mixin">
-    <h4>box-base()</h4>
-    <p>Provides common box styles.</p>
-    <h5>parameters</h5>
-    <ul class="parameter">
-        <li>$padding</li>
-        <li>$radius</li>
-    </ul>
-</div>
-<div class="mixin">
-    <h4>box-colors()</h4>
-    <p>Provides color related box styles.</p>
-    <h5>parameters</h5>
-    <ul class="parameter">
-        <li>$color</li>
-        <li>$borderColor</li>
-        <li>$background</li>
-    </ul>
-</div>
+    <h2>components</h2>
+    
+        <h3>buttons</h3>
+        
+            <div class="mixin">
+                <h4>button-base()</h4>
+                
+                    <p>Adds button common styles.</p>
+                
+                
+                    <h5>parameters</h5>
+                    <ul class="parameters">
+                        
+                            <li>$padding</li>
+                        
+                            <li>$color</li>
+                        
+                            <li>$hoverColor</li>
+                        
+                            <li>$borderColor</li>
+                        
+                            <li>$radius</li>
+                        
+                            <li>$shadow</li>
+                        
+                    </ul>
+                
+                
+                
+            </div>
+        
+            <div class="mixin">
+                <h4>button()</h4>
+                
+                    <p>Sets an element as a basic button.</p>
+                
+                
+                    <h5>parameters</h5>
+                    <ul class="parameters">
+                        
+                            <li>$padding</li>
+                        
+                            <li>$color</li>
+                        
+                            <li>$hoverColor</li>
+                        
+                            <li>$borderColor</li>
+                        
+                            <li>$radius</li>
+                        
+                            <li>$shadow</li>
+                        
+                            <li>$background</li>
+                        
+                    </ul>
+                
+                
+                    <h5>sample code</h5>
+                    <pre><code>input[type=submit] { @include button(); }</code></pre>
+                
+                
+                    <h5>sample</h5>
+                    <p class="demo"><a href="#" class="button">I'm a link</a></p> <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
+
+                
+            </div>
+        
+            <div class="mixin">
+                <h4>button-gradient()</h4>
+                
+                    <p>Sets an element as a button with gradient background.</p>
+                
+                
+                    <h5>parameters</h5>
+                    <ul class="parameters">
+                        
+                            <li>$padding</li>
+                        
+                            <li>$color</li>
+                        
+                            <li>$hoverColor</li>
+                        
+                            <li>$borderColor</li>
+                        
+                            <li>$radius</li>
+                        
+                            <li>$shadow</li>
+                        
+                            <li>$startColor</li>
+                        
+                            <li>$endColor</li>
+                        
+                    </ul>
+                
+                
+                    <h5>sample code</h5>
+                    <pre><code>input[type=submit] { @include button-gradient(); }</code></pre>
+                
+                
+                    <h5>sample</h5>
+                    <p class="demo"><a href="#" class="button-gradient">I'm a link</a></p> <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
+
+                
+            </div>
+        
+    
+        <h3>boxes</h3>
+        
+            <div class="mixin">
+                <h4>box-base()</h4>
+                
+                    <p>Adds box common styles.</p>
+                
+                
+                    <h5>parameters</h5>
+                    <ul class="parameters">
+                        
+                            <li>$padding</li>
+                        
+                            <li>$radius</li>
+                        
+                    </ul>
+                
+                
+                
+            </div>
+        
+            <div class="mixin">
+                <h4>box-colors()</h4>
+                
+                    <p>Adds box color styles.</p>
+                
+                
+                    <h5>parameters</h5>
+                    <ul class="parameters">
+                        
+                            <li>$color</li>
+                        
+                            <li>$borderColor</li>
+                        
+                            <li>$background</li>
+                        
+                    </ul>
+                
+                
+                
+            </div>
+        
+            <div class="mixin">
+                <h4>box()</h4>
+                
+                    <p>Sets an element as a basic box.</p>
+                
+                
+                    <h5>parameters</h5>
+                    <ul class="parameters">
+                        
+                            <li>$padding</li>
+                        
+                            <li>$color</li>
+                        
+                            <li>$borderColor</li>
+                        
+                            <li>$radius</li>
+                        
+                            <li>$background</li>
+                        
+                    </ul>
+                
+                
+                    <h5>sample code</h5>
+                    <pre><code>body > section > div { @include box(); }</code></pre>
+                
+                
+            </div>
+        
+    
+
+
+
+
 
             </div>
         </section>
