@@ -106,6 +106,32 @@
         <p class="demo"><a href="#" class="button-gradient">I'm a link</a></p>
         <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
 */
+/*
+    namespace: boxes
+    description: Adds box common styles.
+    params:
+        - $padding
+        - $radius
+*/
+/*
+    namespace: boxes
+    description: Adds box color styles.
+    params:
+        - $color
+        - $borderColor
+        - $background
+*/
+/*
+    namespace: boxes
+    description: Sets an element as a basic box.
+    params:
+        - $padding
+        - $color
+        - $borderColor
+        - $radius
+        - $background
+    code: body > section > div { @include box(); }
+*/
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;

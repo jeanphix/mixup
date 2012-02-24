@@ -69,6 +69,21 @@ docs:
       namespace: buttons
       params: [$padding, $color, $hoverColor, $borderColor, $radius, $shadow, $startColor,
         $endColor]
+  - label: boxes
+    mixins:
+    - description: Adds box common styles.
+      label: box-base
+      namespace: boxes
+      params: [$padding, $radius]
+    - description: Adds box color styles.
+      label: box-colors
+      namespace: boxes
+      params: [$color, $borderColor, $background]
+    - code: body > section > div { @include box(); }
+      description: Sets an element as a basic box.
+      label: box
+      namespace: boxes
+      params: [$padding, $color, $borderColor, $radius, $background]
 
 ---
 

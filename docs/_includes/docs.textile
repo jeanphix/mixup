@@ -4,7 +4,7 @@
         <h3>{{ namespace.label }}</h3>
         {% for mixin in namespace.mixins %}
             <div class="mixin">
-                <h4>{{ mixin.label }}</h4>
+                <h4>{{ mixin.label }}()</h4>
                 {% if mixin.description %}
                     <p>{{ mixin.description }}</p>
                 {% endif %}
