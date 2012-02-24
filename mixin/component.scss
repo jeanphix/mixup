@@ -1,7 +1,17 @@
 @import "style";
 
 
-// Button
+/*
+    namespace: buttons
+    description: Adds button common styles.
+    params:
+        - $padding
+        - $color
+        - $hoverColor
+        - $borderColor
+        - $radius
+        - $shadow
+*/
 @mixin button-base(
     $padding: $buttonPadding,
     $color: $buttonColor,
@@ -22,6 +32,22 @@
         color: $hoverColor;
     }
 }
+/*
+    namespace: buttons
+    description: Sets an element as a basic button.
+    params:
+        - $padding
+        - $color
+        - $hoverColor
+        - $borderColor
+        - $radius
+        - $shadow
+        - $background
+    code: input[type=submit] { @include button(); }
+    demo: >
+        <p class="demo"><a href="#" class="button">I'm a link</a></p>
+        <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
+*/
 @mixin button(
     $padding: $buttonPadding,
     $color: $buttonColor,
@@ -41,6 +67,23 @@
     );
     background: $background;
 }
+/*
+    namespace: buttons
+    description: Sets an element as a button with gradient background.
+    params:
+        - $padding
+        - $color
+        - $hoverColor
+        - $borderColor
+        - $radius
+        - $shadow
+        - $startColor
+        - $endColor
+    code: input[type=submit] { @include button-gradient(); }
+    demo: >
+        <p class="demo"><a href="#" class="button-gradient">I'm a link</a></p>
+        <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
+*/
 @mixin button-gradient(
     $padding: $buttonPadding,
     $color: $buttonColor,
@@ -61,8 +104,13 @@
     );
     @include gradient-vertical($startColor, $endColor);
 }
-
-// Box
+/*
+    namespace: boxes
+    description: Adds box common styles.
+    params:
+        - $padding
+        - $radius
+*/
 @mixin box-base(
     $padding: $boxPadding,
     $radius: $boxRadius
@@ -78,6 +126,14 @@
         margin-bottom: 0;
     }
 }
+/*
+    namespace: boxes
+    description: Adds box color styles.
+    params:
+        - $color
+        - $borderColor
+        - $background
+*/
 @mixin box-colors(
     $color: $boxColor,
     $borderColor: $boxBorderColor,
@@ -87,6 +143,17 @@
     @include border($borderColor);
     background: $background;
 }
+/*
+    namespace: boxes
+    description: Sets an element as a basic box.
+    params:
+        - $padding
+        - $color
+        - $borderColor
+        - $radius
+        - $background
+    code: body > section > div { @include box(); }
+*/
 @mixin box(
     $padding: $boxPadding,
     $color: $boxColor,

@@ -4,6 +4,6 @@ docs:
 	sass builder/form.scss docs/static/css/mixup/form.css
 	sass builder/layout.scss docs/static/css/mixup/layout.css
 	sass docs/styles.scss docs/static/css/styles.css
-
+	docs/_bin/documentor.py
 
 .PHONY: docs 

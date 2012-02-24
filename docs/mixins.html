@@ -1,92 +1,91 @@
 ---
 layout: base
 title: mixins
+docs:
+- layout:
+  label: layout
+  namespaces:
+  - label: containers
+    mixins:
+    - {description: Base styles for containers., label: container, namespace: containers}
+    - code: body > section { @include container-center(); }
+      description: Sets an element as a center block.
+      label: container-center
+      namespace: containers
+      params: [$width]
+    - code: body > section { @include container-padded(); }
+      description: Sets an element as a padded block.
+      label: container-padded
+      namespace: containers
+      params: [$padding]
+  - label: grids
+    mixins:
+    - {description: Sets an element as a cell container., label: row, namespace: grids}
+    - description: Adds common cell styles.
+      label: cell-base
+      namespace: grids
+      params: [$spacing]
+    - description: Adds cell dimension styles.
+      label: cell-width
+      namespace: grids
+      params: [$colspan, $columnCount, $spacing]
+    - code: "@import \"mixin/default/layout\"; @import \"mixin/layout\"; @media screen\
+        \ and (min-width: 400px) {\n    .row {\n        @include row();\n        \
+        \ {\n            @include cell(4);\n            &:last-child {\n         \
+        \       @include cell-width(8);\n            }\n        }\n    }\n}\n"
+      demo: "<div class=\"row\">\n    <p>I'm a cell.</p>\n    <p>I'm another cell.</p>\n\
+        </div>\n"
+      description: Sets an element as cell.
+      label: cell
+      namespace: grids
+      params: [$colspan, $columnCount, $spacing]
+
+- components:
+  label: components
+  namespaces:
+  - label: buttons
+    mixins:
+    - description: Adds button common styles.
+      label: button-base
+      namespace: buttons
+      params: [$padding, $color, $hoverColor, $borderColor, $radius, $shadow]
+    - code: input[type=submit] { @include button(); }
+      demo: '<p class="demo"><a href="#" class="button">I''m a link</a></p> <p class="demo"><input
+        type="submit" value="I''m an input[type=submit]" class="button" /></p>
+
+        '
+      description: Sets an element as a basic button.
+      label: button
+      namespace: buttons
+      params: [$padding, $color, $hoverColor, $borderColor, $radius, $shadow, $background]
+    - code: input[type=submit] { @include button-gradient(); }
+      demo: '<p class="demo"><a href="#" class="button-gradient">I''m a link</a></p>
+        <p class="demo"><input type="submit" value="I''m an input[type=submit]" class="button-gradient"
+        /></p>
+
+        '
+      description: Sets an element as a button with gradient background.
+      label: button-gradient
+      namespace: buttons
+      params: [$padding, $color, $hoverColor, $borderColor, $radius, $shadow, $startColor,
+        $endColor]
+  - label: boxes
+    mixins:
+    - description: Adds box common styles.
+      label: box-base
+      namespace: boxes
+      params: [$padding, $radius]
+    - description: Adds box color styles.
+      label: box-colors
+      namespace: boxes
+      params: [$color, $borderColor, $background]
+    - code: body > section > div { @include box(); }
+      description: Sets an element as a basic box.
+      label: box
+      namespace: boxes
+      params: [$padding, $color, $borderColor, $radius, $background]
+
 ---
 
 <h1>mixins</h1>
-
-<h2>layout</h2>
-
-<h3>grid</h3>
-<pre><code>@import "mixin/default/layout";
-@import "mixin/layout";
-
-@media screen and (min-width: 400px) {
-    .row {
-        @include row();
-        > p {
-            @include cell(4);
-            &:last-child {
-                @include cell-width(8);
-            }
-        }
-    }
-}</code>
-</pre>
-<div class="row">
-    <p>I'm a cell.</p>
-    <p>I'm another cell.</p>
-</div>
-
-<h2>components</h2>
-
-<h3>buttons</h3>
-<div class="mixin">
-    <h4>button()</h4>
-    <p>Creates a basic button.</p>
-    <h5>parameters:</h5>
-    <ul class="parameter">
-        <li>$padding</li>
-        <li>$color</li>
-        <li>$hoverColor</li>
-        <li>$borderColor</li>
-        <li>$radius</li>
-        <li>$shadow</li>
-        <li>$background</li>
-    </ul>
-    <h5>code</h5>
-    <pre><code>input[type=submit] { @include button(); }</code></pre>
-    <h5>samples</h5>
-    <p class="demo"><a href="#" class="button">I'm a link</a></p>
-    <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
-</div>
-<div class="mixin">
-    <h4>button-gradient()</h4>
-    <p>Creates a button with gradient background.</p>
-    <h5>parameters:</h5>
-    <ul class="parameter">
-        <li>$padding</li>
-        <li>$color</li>
-        <li>$hoverColor</li>
-        <li>$borderColor</li>
-        <li>$radius</li>
-        <li>$shadow</li>
-        <li>$startColor</li>
-        <li>$endColor</li>
-    </ul>
-    <h5>code</h5>
-    <pre><code>input[type=submit] { @include button-gradient(); }</code></pre>
-    <h5>samples</h5>
-    <p class="demo"><a href="#" class="button-gradient">I'm a link</a></p>
-    <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
-</div>
-<h3>boxes</h3>
-<div class="mixin">
-    <h4>box-base()</h4>
-    <p>Provides common box styles.</p>
-    <h5>parameters</h5>
-    <ul class="parameter">
-        <li>$padding</li>
-        <li>$radius</li>
-    </ul>
-</div>
-<div class="mixin">
-    <h4>box-colors()</h4>
-    <p>Provides color related box styles.</p>
-    <h5>parameters</h5>
-    <ul class="parameter">
-        <li>$color</li>
-        <li>$borderColor</li>
-        <li>$background</li>
-    </ul>
-</div>
+{% include docs.textile %}
