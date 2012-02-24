@@ -1,3 +1,111 @@
+/*
+    namespace: containers
+    description: Base styles for containers.
+*/
+/*
+    namespace: containers
+    description: Sets an element as a center block.
+    params:
+        - $width
+    code: body > section { @include container-center(); }
+*/
+/*
+    namespace: containers
+    description: Sets an element as a padded block.
+    params:
+        - $padding
+    code: body > section { @include container-padded(); }
+*/
+/*
+    namespace: grids
+    description: Sets an element as a cell container.
+*/
+/*
+    namespace: grids
+    description: Adds common cell styles.
+    params:
+        - $spacing
+*/
+/*
+    namespace: grids
+    description: Adds cell dimension styles.
+    params:
+        - $colspan
+        - $columnCount
+        - $spacing
+*/
+/*
+    namespace: grids
+    description: Sets an element as cell.
+    params:
+        - $colspan
+        - $columnCount
+        - $spacing
+    code: >
+        @import "mixin/default/layout";
+        @import "mixin/layout";
+        @media screen and (min-width: 400px) {
+            .row {
+                @include row();
+                 {
+                    @include cell(4);
+                    &:last-child {
+                        @include cell-width(8);
+                    }
+                }
+            }
+        }
+    demo: >
+        <div class="row">
+            <p>I'm a cell.</p>
+            <p>I'm another cell.</p>
+        </div>
+
+*/
+/*
+    namespace: buttons
+    description: Adds button common styles.
+    params:
+        - $padding
+        - $color
+        - $hoverColor
+        - $borderColor
+        - $radius
+        - $shadow
+*/
+/*
+    namespace: buttons
+    description: Sets an element as a basic button.
+    params:
+        - $padding
+        - $color
+        - $hoverColor
+        - $borderColor
+        - $radius
+        - $shadow
+        - $background
+    code: input[type=submit] { @include button(); }
+    demo: >
+        <p class="demo"><a href="#" class="button">I'm a link</a></p>
+        <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
+*/
+/*
+    namespace: buttons
+    description: Sets an element as a button with gradient background.
+    params:
+        - $padding
+        - $color
+        - $hoverColor
+        - $borderColor
+        - $radius
+        - $shadow
+        - $startColor
+        - $endColor
+    code: input[type=submit] { @include button-gradient(); }
+    demo: >
+        <p class="demo"><a href="#" class="button-gradient">I'm a link</a></p>
+        <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
+*/
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
