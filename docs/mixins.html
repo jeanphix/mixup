@@ -50,8 +50,8 @@ docs:
       namespace: buttons
       params: [$padding, $color, $hoverColor, $borderColor, $radius, $shadow]
     - code: input[type=submit] { @include button(); }
-      demo: '<p class="demo"><a href="#" class="button">I''m a link</a></p> <p class="demo"><input
-        type="submit" value="I''m an input[type=submit]" class="button" /></p>
+      demo: '<p><a href="#" class="button">I''m a link</a></p> <p><input type="submit"
+        value="I''m an input[type=submit]" class="button" /></p>
 
         '
       description: Sets an element as a basic button.
@@ -59,9 +59,8 @@ docs:
       namespace: buttons
       params: [$padding, $color, $hoverColor, $borderColor, $radius, $shadow, $background]
     - code: input[type=submit] { @include button-gradient(); }
-      demo: '<p class="demo"><a href="#" class="button-gradient">I''m a link</a></p>
-        <p class="demo"><input type="submit" value="I''m an input[type=submit]" class="button-gradient"
-        /></p>
+      demo: '<p><a href="#" class="button-gradient">I''m a link</a></p> <p><input
+        type="submit" value="I''m an input[type=submit]" class="button-gradient" /></p>
 
         '
       description: Sets an element as a button with gradient background.
@@ -84,17 +83,32 @@ docs:
       label: box
       namespace: boxes
       params: [$padding, $color, $borderColor, $radius, $background]
-    - description: Adds success colors to a box.
+    - code: ".success {\n    @include box-base();\n    @include box-colors-success();\n\
+        }\n"
+      demo: '<p class="success">I''m a success box.</p>
+
+        '
+      description: Adds success colors to a box.
       label: box-colors-success
       namespace: boxes
       params: [$color, $borderColor, $background]
-    - description: Adds error colors to a box.
+    - code: ".error {\n    @include box-base();\n    @include box-colors-error();\n\
+        }\n"
+      demo: '<p class="error">I''m an error box.</p>
+
+        '
+      description: Adds error colors to a box.
       label: box-colors-error
       namespace: boxes
       params: [$color, $borderColor, $errorBackground]
   - label: navigation
     mixins:
-    - description: Sets an element as an horizontal navigation block.
+    - code: ".navigation-horizontal {\n    @include gradient-vertical();\n    @include\
+        \ navigation-horizontal();\n}\n"
+      demo: "<nav class=\"navigation-horizontal\">\n    <ul>\n        <li><a href=\"\
+        #\">item 1</a></li>\n        <li><a href=\"#\">item 2</a></li>\n        <li><a\
+        \ href=\"#\">item 3</a></li>\n    </ul>\n</nav>\n"
+      description: Sets an element as an horizontal navigation block.
       label: navigation-horizontal
       namespace: navigation
       params: [$color, $height, $currentBackgroundColor, $focusColor, $activeClass]

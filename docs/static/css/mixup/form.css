@@ -22,8 +22,8 @@
         - $background
     code: input[type=submit] { @include button(); }
     demo: >
-        <p class="demo"><a href="#" class="button">I'm a link</a></p>
-        <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
+        <p><a href="#" class="button">I'm a link</a></p>
+        <p><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
 */
 /*
     namespace: buttons
@@ -39,8 +39,8 @@
         - $endColor
     code: input[type=submit] { @include button-gradient(); }
     demo: >
-        <p class="demo"><a href="#" class="button-gradient">I'm a link</a></p>
-        <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
+        <p><a href="#" class="button-gradient">I'm a link</a></p>
+        <p><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
 */
 /*
     namespace: boxes
@@ -75,6 +75,13 @@
         - $color
         - $borderColor
         - $background
+    code: >
+        .success {
+            @include box-base();
+            @include box-colors-success();
+        }
+    demo: >
+        <p class="success">I'm a success box.</p>
 */
 /*
     namespace: boxes
@@ -83,6 +90,13 @@
         - $color
         - $borderColor
         - $errorBackground
+    code: >
+        .error {
+            @include box-base();
+            @include box-colors-error();
+        }
+    demo: >
+        <p class="error">I'm an error box.</p>
 */
 /*
     namespace: navigation
@@ -93,6 +107,19 @@
         - $currentBackgroundColor
         - $focusColor
         - $activeClass
+    code: >
+        .navigation-horizontal {
+            @include gradient-vertical();
+            @include navigation-horizontal();
+        }
+    demo: >
+        <nav class="navigation-horizontal">
+            <ul>
+                <li><a href="#">item 1</a></li>
+                <li><a href="#">item 2</a></li>
+                <li><a href="#">item 3</a></li>
+            </ul>
+        </nav>
 */
 /*
     namespace: forms

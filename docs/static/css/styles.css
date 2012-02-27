@@ -86,8 +86,8 @@
         - $background
     code: input[type=submit] { @include button(); }
     demo: >
-        <p class="demo"><a href="#" class="button">I'm a link</a></p>
-        <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
+        <p><a href="#" class="button">I'm a link</a></p>
+        <p><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
 */
 /*
     namespace: buttons
@@ -103,8 +103,8 @@
         - $endColor
     code: input[type=submit] { @include button-gradient(); }
     demo: >
-        <p class="demo"><a href="#" class="button-gradient">I'm a link</a></p>
-        <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
+        <p><a href="#" class="button-gradient">I'm a link</a></p>
+        <p><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
 */
 /*
     namespace: boxes
@@ -139,6 +139,13 @@
         - $color
         - $borderColor
         - $background
+    code: >
+        .success {
+            @include box-base();
+            @include box-colors-success();
+        }
+    demo: >
+        <p class="success">I'm a success box.</p>
 */
 /*
     namespace: boxes
@@ -147,6 +154,13 @@
         - $color
         - $borderColor
         - $errorBackground
+    code: >
+        .error {
+            @include box-base();
+            @include box-colors-error();
+        }
+    demo: >
+        <p class="error">I'm an error box.</p>
 */
 /*
     namespace: navigation
@@ -157,6 +171,19 @@
         - $currentBackgroundColor
         - $focusColor
         - $activeClass
+    code: >
+        .navigation-horizontal {
+            @include gradient-vertical();
+            @include navigation-horizontal();
+        }
+    demo: >
+        <nav class="navigation-horizontal">
+            <ul>
+                <li><a href="#">item 1</a></li>
+                <li><a href="#">item 2</a></li>
+                <li><a href="#">item 3</a></li>
+            </ul>
+        </nav>
 */
 /*
     namespace: forms
@@ -230,7 +257,7 @@
   .mixin > *:last-child {
     margin-bottom: 0; }
 
-.demo .button {
+.button {
   display: inline-block;
   padding: 0.4em 1em;
   color: inherit;
@@ -244,9 +271,10 @@
   text-decoration: none;
   cursor: pointer;
   background: #fafafa; }
-  .demo .button:hover {
+  .button:hover {
     color: inherit; }
-.demo .button-gradient {
+
+.button-gradient {
   display: inline-block;
   padding: 0.4em 1em;
   color: inherit;
@@ -267,5 +295,60 @@
   background-image: -o-linear-gradient(top, white, #e6e6e6);
   background-image: linear-gradient(top, white, #e6e6e6);
   background-repeat: repeat-x; }
-  .demo .button-gradient:hover {
+  .button-gradient:hover {
     color: inherit; }
+
+.success,
+.error {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em; }
+  .success > *:first-child,
+  .error > *:first-child {
+    margin-top: 0; }
+  .success > *:last-child,
+  .error > *:last-child {
+    margin-bottom: 0; }
+
+.success {
+  color: #119e00;
+  border: 1px #119e00 solid;
+  background: #bcffbc; }
+
+.error {
+  color: red;
+  border: 1px red solid;
+  background: #ffc6c6; }
+
+.navigation-horizontal {
+  background-color: #474747;
+  background-image: -moz-linear-gradient(top, #555555, #333333);
+  background-image: -ms-linear-gradient(top, #555555, #333333);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#555555), to(#333333));
+  background-image: -webkit-linear-gradient(top, #555555, #333333);
+  background-image: -o-linear-gradient(top, #555555, #333333);
+  background-image: linear-gradient(top, #555555, #333333);
+  background-repeat: repeat-x;
+  display: block;
+  line-height: 3em; }
+  .navigation-horizontal * {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0; }
+  .navigation-horizontal a {
+    height: 3em;
+    padding: 0 0.5em;
+    text-decoration: none;
+    color: #dddddd; }
+    .navigation-horizontal a:visited {
+      color: #dddddd; }
+    .navigation-horizontal a:hover, .navigation-horizontal a:focus, .navigation-horizontal a:active {
+      outline: none;
+      color: white; }
+  .navigation-horizontal .current {
+    background: #111111; }
+    .navigation-horizontal .current, .navigation-horizontal .current:visited {
+      color: white; }
