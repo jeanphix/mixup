@@ -42,3 +42,9 @@
     @include gradient-vertical();
     @include navigation-horizontal();
 }
+table {
+    @include table();
+}
+table.bordered {
+    @include table-borders();
+}

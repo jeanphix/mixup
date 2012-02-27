@@ -57,6 +57,14 @@ docs:
       label: transform
       namespace: transformations
       params: [$transformation]
+  - label: background
+    mixins:
+    - description: Alternates background.
+      label: alternate-background
+      namespace: background
+      params: [$oddBackground, $evenBackground]
+  - label: transformations
+    mixins:
     - description: Scales.
       label: scale
       namespace: transformations
@@ -195,6 +203,49 @@ docs:
       label: form
       namespace: forms
       params: [$fieldWidth, $fieldBorderColor, $fieldBackground, $fieldRadius, $lineHeight]
+  - label: tables
+    mixins:
+    - demo: "<table class=\"no-border\">\n    <thead>\n        <tr>\n            <th>header\
+        \ 1</th>\n            <th>header 2</th>\n            <th>header 3</th>\n \
+        \           <th>header 4</th>\n        </tr>\n    </thead>\n    <tbody>\n\
+        \        <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n\
+        \            <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n\
+        \        <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n\
+        \            <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n\
+        \        <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n\
+        \            <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n\
+        \        <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n\
+        \            <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n\
+        \        <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n\
+        \            <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n\
+        \    </tbody>\n</table>\n"
+      description: Adds table styles.
+      label: table
+      namespace: tables
+      params: [$width, $borderColor, $cellPadding, $oddBackground, $evenBackground]
+    - description: Adds borders on tables.
+      label: table-borders
+      namespace: tables
+      params: [$borderColor, $radius]
+    - demo: "<table class=\"bordered\">\n    <thead>\n        <tr>\n            <th>header\
+        \ 1</th>\n            <th>header 2</th>\n            <th>header 3</th>\n \
+        \           <th>header 4</th>\n        </tr>\n    </thead>\n    <tbody>\n\
+        \        <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n\
+        \            <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n\
+        \        <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n\
+        \            <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n\
+        \        <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n\
+        \            <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n\
+        \        <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n\
+        \            <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n\
+        \        <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n\
+        \            <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n\
+        \    </tbody>\n</table>\n"
+      description: Adds bordered table styles.
+      label: table-bordered
+      namespace: tables
+      params: [$width, $borderColor, $cellPadding, $oddBackground, $evenBackground,
+        $radius]
 
 ---
 

@@ -349,4 +349,193 @@
         @include button-gradient();
     }
 }
-
+/*
+    namespace: tables
+    description: Adds table styles.
+    demo: >
+        <table class="no-border">
+            <thead>
+                <tr>
+                    <th>header 1</th>
+                    <th>header 2</th>
+                    <th>header 3</th>
+                    <th>header 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+            </tbody>
+        </table>
+    params:
+        - $width
+        - $borderColor
+        - $cellPadding
+        - $oddBackground
+        - $evenBackground
+*/
+@mixin table (
+    $width: 100%,
+    $borderColor: $tableBorderColor,
+    $cellPadding: $tableCellPadding,
+    $oddBackground: $tableOddBackground,
+    $evenBackground: $tableEvenBackground
+) {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    tbody > tr {
+        @include alternate-background(
+            $tableOddBackground,
+            $tableEvenBackground
+        );
+    }
+    thead > tr:first-child > th {
+        border-top: 0;
+    }
+    th,
+    td {
+        padding: $cellPadding;
+        text-align: left;
+        border-top: $borderColor 1px solid;
+    }
+}
+/*
+    namespace: tables
+    description: Adds borders on tables.
+    params:
+        - $borderColor
+        - $radius
+*/
+@mixin table-borders (
+    $borderColor: $tableBorderColor,
+    $radius: $tableRadius
+) {
+    th,
+    td {
+        border-left: $borderColor 1px solid;
+        &:last-child {
+            border-right: $borderColor 1px solid;
+        }
+    }
+    tr:last-child td{
+    }
+    > thead > tr:first-child > th {
+        border-top: $borderColor 1px solid;
+        &:first-child {
+            @include border-radius($radius 0 0 0);
+        }
+        &:last-child {
+            border-radius: 0 $radius 0 0;
+        }
+    }
+    tr:last-child td {
+        border-bottom: $borderColor 1px solid;
+        &:first-child {
+        border-radius: 0 0 0 $radius;
+        }
+        &:last-child {
+            border-radius: 0 0 $radius 0;
+        }
+    }
+}
+/*
+    namespace: tables
+    description: Adds bordered table styles.
+    demo: >
+        <table class="bordered">
+            <thead>
+                <tr>
+                    <th>header 1</th>
+                    <th>header 2</th>
+                    <th>header 3</th>
+                    <th>header 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+            </tbody>
+        </table>
+    params:
+        - $width
+        - $borderColor
+        - $cellPadding
+        - $oddBackground
+        - $evenBackground
+        - $radius
+*/
+@mixin table-bordered (
+    $width: 100%,
+    $borderColor: $tableBorderColor,
+    $cellPadding: $tableCellPadding,
+    $oddBackground: $tableOddBackground,
+    $evenBackground: $tableEvenBackground,
+    $radius: $tableRadius
+) {
+    @include table(
+        $width,
+        $borderColor,
+        $cellPadding,
+        $oddBackground,
+        $evenBackground
+    );
+    @include table-borders($borderColor, $radius);
+}

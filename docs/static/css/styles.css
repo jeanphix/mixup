@@ -74,6 +74,13 @@
         - $transformation
 */
 /*
+    namespace: background
+    description: Alternates background.
+    params:
+        - $oddBackground
+        - $evenBackground
+*/
+/*
     namespace: transformations
     description: Scales.
     params:
@@ -235,6 +242,13 @@
     description: Applies transfomation(s).
     params:
         - $transformation
+*/
+/*
+    namespace: background
+    description: Alternates background.
+    params:
+        - $oddBackground
+        - $evenBackground
 */
 /*
     namespace: transformations
@@ -407,6 +421,120 @@
         - $fieldRadius
         - $lineHeight
 */
+/*
+    namespace: tables
+    description: Adds table styles.
+    demo: >
+        <table class="no-border">
+            <thead>
+                <tr>
+                    <th>header 1</th>
+                    <th>header 2</th>
+                    <th>header 3</th>
+                    <th>header 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+            </tbody>
+        </table>
+    params:
+        - $width
+        - $borderColor
+        - $cellPadding
+        - $oddBackground
+        - $evenBackground
+*/
+/*
+    namespace: tables
+    description: Adds borders on tables.
+    params:
+        - $borderColor
+        - $radius
+*/
+/*
+    namespace: tables
+    description: Adds bordered table styles.
+    demo: >
+        <table class="bordered">
+            <thead>
+                <tr>
+                    <th>header 1</th>
+                    <th>header 2</th>
+                    <th>header 3</th>
+                    <th>header 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+            </tbody>
+        </table>
+    params:
+        - $width
+        - $borderColor
+        - $cellPadding
+        - $oddBackground
+        - $evenBackground
+        - $radius
+*/
 .row > p {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -566,3 +694,39 @@
     background: #111111; }
     .navigation-horizontal .current, .navigation-horizontal .current:visited {
       color: white; }
+
+table {
+  max-width: 100%;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0; }
+  table tbody > tr:nth-child(odd) {
+    background: #fafafa; }
+  table thead > tr:first-child > th {
+    border-top: 0; }
+  table th,
+  table td {
+    padding: 0.5em 1em;
+    text-align: left;
+    border-top: #dddddd 1px solid; }
+
+table.bordered th,
+table.bordered td {
+  border-left: #dddddd 1px solid; }
+  table.bordered th:last-child,
+  table.bordered td:last-child {
+    border-right: #dddddd 1px solid; }
+table.bordered > thead > tr:first-child > th {
+  border-top: #dddddd 1px solid; }
+  table.bordered > thead > tr:first-child > th:first-child {
+    -webkit-border-radius: 0.5em 0 0 0;
+    -moz-border-radius: 0.5em 0 0 0;
+    border-radius: 0.5em 0 0 0; }
+  table.bordered > thead > tr:first-child > th:last-child {
+    border-radius: 0 0.5em 0 0; }
+table.bordered tr:last-child td {
+  border-bottom: #dddddd 1px solid; }
+  table.bordered tr:last-child td:first-child {
+    border-radius: 0 0 0 0.5em; }
+  table.bordered tr:last-child td:last-child {
+    border-radius: 0 0 0.5em 0; }

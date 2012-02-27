@@ -182,6 +182,28 @@
     transform: $transformation;
 }
 /*
+    namespace: background
+    description: Alternates background.
+    params:
+        - $oddBackground
+        - $evenBackground
+*/
+@mixin alternate-background (
+    $oddBackground,
+    $evenBackground
+) {
+    @if $oddBackground != transparent {
+        &:nth-child(odd) {
+            background: $oddBackground;
+        }
+    }
+    @if $evenBackground != transparent {
+        &:nth-child(even) {
+            background: $evenBackground;
+        }
+    }
+}
+/*
     namespace: transformations
     description: Scales.
     params:
