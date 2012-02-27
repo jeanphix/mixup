@@ -155,7 +155,7 @@
         - $color
         - $angle
 */
-@mixin grandient-striped(
+@mixin gradient-striped(
     $color: $gradientStartColor,
     $angle: $gradientDeg
 ) {
