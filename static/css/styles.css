@@ -74,6 +74,13 @@
         - $transformation
 */
 /*
+    namespace: background
+    description: Alternates background.
+    params:
+        - $oddBackground
+        - $evenBackground
+*/
+/*
     namespace: transformations
     description: Scales.
     params:
@@ -237,6 +244,13 @@
         - $transformation
 */
 /*
+    namespace: background
+    description: Alternates background.
+    params:
+        - $oddBackground
+        - $evenBackground
+*/
+/*
     namespace: transformations
     description: Scales.
     params:
@@ -284,6 +298,7 @@
         - $radius
         - $shadow
         - $background
+        - $hoverBackground
     code: input[type=submit] { @include button(); }
     demo: >
         <p><a href="#" class="button">I'm a link</a></p>
@@ -301,6 +316,8 @@
         - $shadow
         - $startColor
         - $endColor
+        - $hoverStartColor
+        - $hoverEndColor
     code: input[type=submit] { @include button-gradient(); }
     demo: >
         <p><a href="#" class="button-gradient">I'm a link</a></p>
@@ -404,6 +421,120 @@
         - $fieldRadius
         - $lineHeight
 */
+/*
+    namespace: tables
+    description: Adds table styles.
+    demo: >
+        <table class="no-border">
+            <thead>
+                <tr>
+                    <th>header 1</th>
+                    <th>header 2</th>
+                    <th>header 3</th>
+                    <th>header 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+            </tbody>
+        </table>
+    params:
+        - $width
+        - $borderColor
+        - $cellPadding
+        - $oddBackground
+        - $evenBackground
+*/
+/*
+    namespace: tables
+    description: Adds borders on tables.
+    params:
+        - $borderColor
+        - $radius
+*/
+/*
+    namespace: tables
+    description: Adds bordered table styles.
+    demo: >
+        <table class="bordered">
+            <thead>
+                <tr>
+                    <th>header 1</th>
+                    <th>header 2</th>
+                    <th>header 3</th>
+                    <th>header 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+            </tbody>
+        </table>
+    params:
+        - $width
+        - $borderColor
+        - $cellPadding
+        - $oddBackground
+        - $evenBackground
+        - $radius
+*/
 .row > p {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -471,8 +602,10 @@
   text-decoration: none;
   cursor: pointer;
   background: #fafafa; }
-  .button:hover {
+  .button:hover, .button:focus, .button:active {
     color: inherit; }
+  .button:hover, .button:focus, .button:active {
+    background: #eeeeee; }
 
 .button-gradient {
   display: inline-block;
@@ -495,8 +628,17 @@
   background-image: -o-linear-gradient(top, white, #e6e6e6);
   background-image: linear-gradient(top, white, #e6e6e6);
   background-repeat: repeat-x; }
-  .button-gradient:hover {
+  .button-gradient:hover, .button-gradient:focus, .button-gradient:active {
     color: inherit; }
+  .button-gradient:hover, .button-gradient:focus, .button-gradient:active {
+    background-color: #efefef;
+    background-image: -moz-linear-gradient(top, #fafafa, #e0e0e0);
+    background-image: -ms-linear-gradient(top, #fafafa, #e0e0e0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#e0e0e0));
+    background-image: -webkit-linear-gradient(top, #fafafa, #e0e0e0);
+    background-image: -o-linear-gradient(top, #fafafa, #e0e0e0);
+    background-image: linear-gradient(top, #fafafa, #e0e0e0);
+    background-repeat: repeat-x; }
 
 .success,
 .error {
@@ -552,3 +694,39 @@
     background: #111111; }
     .navigation-horizontal .current, .navigation-horizontal .current:visited {
       color: white; }
+
+table {
+  max-width: 100%;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0; }
+  table tbody > tr:nth-child(odd) {
+    background: #fafafa; }
+  table thead > tr:first-child > th {
+    border-top: 0; }
+  table th,
+  table td {
+    padding: 0.5em 1em;
+    text-align: left;
+    border-top: #dddddd 1px solid; }
+
+table.bordered th,
+table.bordered td {
+  border-left: #dddddd 1px solid; }
+  table.bordered th:last-child,
+  table.bordered td:last-child {
+    border-right: #dddddd 1px solid; }
+table.bordered > thead > tr:first-child > th {
+  border-top: #dddddd 1px solid; }
+  table.bordered > thead > tr:first-child > th:first-child {
+    -webkit-border-radius: 0.5em 0 0 0;
+    -moz-border-radius: 0.5em 0 0 0;
+    border-radius: 0.5em 0 0 0; }
+  table.bordered > thead > tr:first-child > th:last-child {
+    border-radius: 0 0.5em 0 0; }
+table.bordered tr:last-child td {
+  border-bottom: #dddddd 1px solid; }
+  table.bordered tr:last-child td:first-child {
+    border-radius: 0 0 0 0.5em; }
+  table.bordered tr:last-child td:last-child {
+    border-radius: 0 0 0.5em 0; }

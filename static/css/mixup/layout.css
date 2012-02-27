@@ -74,6 +74,13 @@
         - $transformation
 */
 /*
+    namespace: background
+    description: Alternates background.
+    params:
+        - $oddBackground
+        - $evenBackground
+*/
+/*
     namespace: transformations
     description: Scales.
     params:
@@ -237,6 +244,13 @@
         - $transformation
 */
 /*
+    namespace: background
+    description: Alternates background.
+    params:
+        - $oddBackground
+        - $evenBackground
+*/
+/*
     namespace: transformations
     description: Scales.
     params:
@@ -338,6 +352,13 @@
         - $transformation
 */
 /*
+    namespace: background
+    description: Alternates background.
+    params:
+        - $oddBackground
+        - $evenBackground
+*/
+/*
     namespace: transformations
     description: Scales.
     params:
@@ -385,6 +406,7 @@
         - $radius
         - $shadow
         - $background
+        - $hoverBackground
     code: input[type=submit] { @include button(); }
     demo: >
         <p><a href="#" class="button">I'm a link</a></p>
@@ -402,6 +424,8 @@
         - $shadow
         - $startColor
         - $endColor
+        - $hoverStartColor
+        - $hoverEndColor
     code: input[type=submit] { @include button-gradient(); }
     demo: >
         <p><a href="#" class="button-gradient">I'm a link</a></p>
@@ -504,6 +528,120 @@
         - $fieldBackground
         - $fieldRadius
         - $lineHeight
+*/
+/*
+    namespace: tables
+    description: Adds table styles.
+    demo: >
+        <table class="no-border">
+            <thead>
+                <tr>
+                    <th>header 1</th>
+                    <th>header 2</th>
+                    <th>header 3</th>
+                    <th>header 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+            </tbody>
+        </table>
+    params:
+        - $width
+        - $borderColor
+        - $cellPadding
+        - $oddBackground
+        - $evenBackground
+*/
+/*
+    namespace: tables
+    description: Adds borders on tables.
+    params:
+        - $borderColor
+        - $radius
+*/
+/*
+    namespace: tables
+    description: Adds bordered table styles.
+    demo: >
+        <table class="bordered">
+            <thead>
+                <tr>
+                    <th>header 1</th>
+                    <th>header 2</th>
+                    <th>header 3</th>
+                    <th>header 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+            </tbody>
+        </table>
+    params:
+        - $width
+        - $borderColor
+        - $cellPadding
+        - $oddBackground
+        - $evenBackground
+        - $radius
 */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

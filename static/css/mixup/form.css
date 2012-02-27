@@ -74,6 +74,13 @@
         - $transformation
 */
 /*
+    namespace: background
+    description: Alternates background.
+    params:
+        - $oddBackground
+        - $evenBackground
+*/
+/*
     namespace: transformations
     description: Scales.
     params:
@@ -121,6 +128,7 @@
         - $radius
         - $shadow
         - $background
+        - $hoverBackground
     code: input[type=submit] { @include button(); }
     demo: >
         <p><a href="#" class="button">I'm a link</a></p>
@@ -138,6 +146,8 @@
         - $shadow
         - $startColor
         - $endColor
+        - $hoverStartColor
+        - $hoverEndColor
     code: input[type=submit] { @include button-gradient(); }
     demo: >
         <p><a href="#" class="button-gradient">I'm a link</a></p>
@@ -241,6 +251,120 @@
         - $fieldRadius
         - $lineHeight
 */
+/*
+    namespace: tables
+    description: Adds table styles.
+    demo: >
+        <table class="no-border">
+            <thead>
+                <tr>
+                    <th>header 1</th>
+                    <th>header 2</th>
+                    <th>header 3</th>
+                    <th>header 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+            </tbody>
+        </table>
+    params:
+        - $width
+        - $borderColor
+        - $cellPadding
+        - $oddBackground
+        - $evenBackground
+*/
+/*
+    namespace: tables
+    description: Adds borders on tables.
+    params:
+        - $borderColor
+        - $radius
+*/
+/*
+    namespace: tables
+    description: Adds bordered table styles.
+    demo: >
+        <table class="bordered">
+            <thead>
+                <tr>
+                    <th>header 1</th>
+                    <th>header 2</th>
+                    <th>header 3</th>
+                    <th>header 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+                <tr>
+                    <td>cell 1</td>
+                    <td>cell 2</td>
+                    <td>cell 3</td>
+                    <td>cell 4</td>
+                </tr>
+            </tbody>
+        </table>
+    params:
+        - $width
+        - $borderColor
+        - $cellPadding
+        - $oddBackground
+        - $evenBackground
+        - $radius
+*/
 form {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -297,8 +421,17 @@ form {
     background-image: -o-linear-gradient(top, white, #e6e6e6);
     background-image: linear-gradient(top, white, #e6e6e6);
     background-repeat: repeat-x; }
-    form input[type=submit]:hover {
+    form input[type=submit]:hover, form input[type=submit]:focus, form input[type=submit]:active {
       color: inherit; }
+    form input[type=submit]:hover, form input[type=submit]:focus, form input[type=submit]:active {
+      background-color: #efefef;
+      background-image: -moz-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -ms-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#e0e0e0));
+      background-image: -webkit-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -o-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: linear-gradient(top, #fafafa, #e0e0e0);
+      background-repeat: repeat-x; }
   form input[type=submit] {
     display: inline-block;
     padding: 0.4em 1em;
@@ -320,8 +453,17 @@ form {
     background-image: -o-linear-gradient(top, white, #e6e6e6);
     background-image: linear-gradient(top, white, #e6e6e6);
     background-repeat: repeat-x; }
-    form input[type=submit]:hover {
+    form input[type=submit]:hover, form input[type=submit]:focus, form input[type=submit]:active {
       color: inherit; }
+    form input[type=submit]:hover, form input[type=submit]:focus, form input[type=submit]:active {
+      background-color: #efefef;
+      background-image: -moz-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -ms-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#e0e0e0));
+      background-image: -webkit-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -o-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: linear-gradient(top, #fafafa, #e0e0e0);
+      background-repeat: repeat-x; }
   form label:first-child {
     display: block; }
   form .errors {
