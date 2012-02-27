@@ -101,10 +101,10 @@ docs:
       label: cell-width
       namespace: grids
       params: [$colspan, $columnCount, $spacing]
-    - code: "@import \"mixin/default/layout\"; @import \"mixin/layout\"; @media screen\
-        \ and (min-width: 400px) {\n    .row {\n        @include row();\n        \
-        \ {\n            @include cell(4);\n            &:last-child {\n         \
-        \       @include cell-width(8);\n            }\n        }\n    }\n}\n"
+    - code: "@media screen and (min-width: 400px) {\n    .row {\n        @include\
+        \ row();\n         {\n            @include cell(4);\n            &:last-child\
+        \ {\n                @include cell-width(8);\n            }\n        }\n \
+        \   }\n}\n"
       demo: "<div class=\"row\">\n    <p>I'm a cell.</p>\n    <p>I'm another cell.</p>\n\
         </div>\n"
       description: Sets an element as cell.
