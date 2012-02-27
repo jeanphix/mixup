@@ -45,8 +45,8 @@
         - $background
     code: input[type=submit] { @include button(); }
     demo: >
-        <p class="demo"><a href="#" class="button">I'm a link</a></p>
-        <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
+        <p><a href="#" class="button">I'm a link</a></p>
+        <p><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
 */
 @mixin button(
     $padding: $buttonPadding,
@@ -81,8 +81,8 @@
         - $endColor
     code: input[type=submit] { @include button-gradient(); }
     demo: >
-        <p class="demo"><a href="#" class="button-gradient">I'm a link</a></p>
-        <p class="demo"><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
+        <p><a href="#" class="button-gradient">I'm a link</a></p>
+        <p><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
 */
 @mixin button-gradient(
     $padding: $buttonPadding,
@@ -164,6 +164,21 @@
     @include box-base($padding, $radius);
     @include box-colors($color, $borderColor, $background);
 }
+/*
+    namespace: boxes
+    description: Adds success colors to a box.
+    params:
+        - $color
+        - $borderColor
+        - $background
+    code: >
+        .success {
+            @include box-base();
+            @include box-colors-success();
+        }
+    demo: >
+        <p class="success">I'm a success box.</p>
+*/
 @mixin box-colors-success(
     $color: $successColor,
     $borderColor: $successColor,
@@ -171,6 +186,21 @@
 ) {
     @include box-colors($color, $borderColor, $background);
 }
+/*
+    namespace: boxes
+    description: Adds error colors to a box.
+    params:
+        - $color
+        - $borderColor
+        - $errorBackground
+    code: >
+        .error {
+            @include box-base();
+            @include box-colors-error();
+        }
+    demo: >
+        <p class="error">I'm an error box.</p>
+*/
 @mixin box-colors-error(
     $color: $errorColor,
     $borderColor: $errorColor,
@@ -179,7 +209,29 @@
     @include box-colors($color, $borderColor, $background);
 }
 
-// Navigation
+/*
+    namespace: navigation
+    description: Sets an element as an horizontal navigation block.
+    params:
+        - $color
+        - $height
+        - $currentBackgroundColor
+        - $focusColor
+        - $activeClass
+    code: >
+        .navigation-horizontal {
+            @include gradient-vertical();
+            @include navigation-horizontal();
+        }
+    demo: >
+        <nav class="navigation-horizontal">
+            <ul>
+                <li><a href="#">item 1</a></li>
+                <li><a href="#">item 2</a></li>
+                <li><a href="#">item 3</a></li>
+            </ul>
+        </nav>
+*/
 @mixin navigation-horizontal(
     $color: $navigationColor,
     $height: $navigationHorizontalHeight,
@@ -217,7 +269,15 @@
     }
 }
 
-// Form
+/*
+    namespace: forms
+    description: Adds form fields styles.
+    params:
+        - $width
+        - $borderColor
+        - $background
+        - $radius
+*/
 @mixin fields (
     $width: $formFieldWidth,
     $borderColor: $formFieldBorderColor,
@@ -239,6 +299,16 @@
         width: auto;
     }
 }
+/*
+    namespace: forms
+    description: Adds form styles.
+    params:
+        - $fieldWidth
+        - $fieldBorderColor
+        - $fieldBackground
+        - $fieldRadius
+        - $lineHeight
+*/
 @mixin form(
     $fieldWidth: $formFieldWidth,
     $fieldBorderColor: $formFieldBorderColor,

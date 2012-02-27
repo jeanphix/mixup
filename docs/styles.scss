@@ -22,11 +22,23 @@
     @include box();
 }
 
-.demo {
-    .button {
-        @include button();
-    }
-    .button-gradient {
-        @include button-gradient();
-    }
+.button {
+    @include button();
+}
+.button-gradient {
+    @include button-gradient();
+}
+.success,
+.error {
+    @include box-base();
+}
+.success {
+    @include box-colors-success();
+}
+.error {
+    @include box-colors-error();
+}
+.navigation-horizontal {
+    @include gradient-vertical();
+    @include navigation-horizontal();
 }
