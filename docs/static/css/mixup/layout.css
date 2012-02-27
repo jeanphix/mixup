@@ -385,6 +385,7 @@
         - $radius
         - $shadow
         - $background
+        - $hoverBackground
     code: input[type=submit] { @include button(); }
     demo: >
         <p><a href="#" class="button">I'm a link</a></p>
@@ -402,6 +403,8 @@
         - $shadow
         - $startColor
         - $endColor
+        - $hoverStartColor
+        - $hoverEndColor
     code: input[type=submit] { @include button-gradient(); }
     demo: >
         <p><a href="#" class="button-gradient">I'm a link</a></p>

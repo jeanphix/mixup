@@ -121,6 +121,7 @@
         - $radius
         - $shadow
         - $background
+        - $hoverBackground
     code: input[type=submit] { @include button(); }
     demo: >
         <p><a href="#" class="button">I'm a link</a></p>
@@ -138,6 +139,8 @@
         - $shadow
         - $startColor
         - $endColor
+        - $hoverStartColor
+        - $hoverEndColor
     code: input[type=submit] { @include button-gradient(); }
     demo: >
         <p><a href="#" class="button-gradient">I'm a link</a></p>
@@ -297,8 +300,17 @@ form {
     background-image: -o-linear-gradient(top, white, #e6e6e6);
     background-image: linear-gradient(top, white, #e6e6e6);
     background-repeat: repeat-x; }
-    form input[type=submit]:hover {
+    form input[type=submit]:hover, form input[type=submit]:focus, form input[type=submit]:active {
       color: inherit; }
+    form input[type=submit]:hover, form input[type=submit]:focus, form input[type=submit]:active {
+      background-color: #efefef;
+      background-image: -moz-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -ms-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#e0e0e0));
+      background-image: -webkit-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -o-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: linear-gradient(top, #fafafa, #e0e0e0);
+      background-repeat: repeat-x; }
   form input[type=submit] {
     display: inline-block;
     padding: 0.4em 1em;
@@ -320,8 +332,17 @@ form {
     background-image: -o-linear-gradient(top, white, #e6e6e6);
     background-image: linear-gradient(top, white, #e6e6e6);
     background-repeat: repeat-x; }
-    form input[type=submit]:hover {
+    form input[type=submit]:hover, form input[type=submit]:focus, form input[type=submit]:active {
       color: inherit; }
+    form input[type=submit]:hover, form input[type=submit]:focus, form input[type=submit]:active {
+      background-color: #efefef;
+      background-image: -moz-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -ms-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#e0e0e0));
+      background-image: -webkit-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -o-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: linear-gradient(top, #fafafa, #e0e0e0);
+      background-repeat: repeat-x; }
   form label:first-child {
     display: block; }
   form .errors {
