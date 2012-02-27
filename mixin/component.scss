@@ -415,8 +415,8 @@
     border-spacing: 0;
     tbody > tr {
         @include alternate-background(
-            $tableOddBackground,
-            $tableEvenBackground
+            $oddBackground,
+            $evenBackground
         );
     }
     thead > tr:first-child > th {
