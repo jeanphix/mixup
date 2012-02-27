@@ -219,7 +219,7 @@
         - $focusColor
         - $activeClass
     code: >
-        .navigation-horizontal {
+        body > header > nav {
             @include gradient-vertical();
             @include navigation-horizontal();
         }
