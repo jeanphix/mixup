@@ -1,4 +1,105 @@
 /*
+    namespace: borders
+    description: Adds 1px solid border.
+    params:
+        - $color
+*/
+/*
+    namespace: borders
+    description: Rounds bordes.
+    params:
+        - $radius
+*/
+/*
+    namespace: borders
+    description: Adds box shadow.
+    params:
+        - $shadow
+*/
+/*
+    namespace: sizing
+    description: Sets box sizing.
+    params:
+        - $sizing
+*/
+/*
+    namespace: gradients
+    description: Adds an horizontal gradient background.
+    params:
+        - $startColor
+        - $endColor
+*/
+/*
+    namespace: gradients
+    description: Adds a vertical gradient background.
+    params:
+        - $startColor
+        - $endColor
+*/
+/*
+    namespace: gradients
+    description: Adds a directional gradient background..
+    params:
+        - $startColor
+        - $endColor
+        - $deg
+*/
+/*
+    namespace: gradients
+    description: Adds a vertical three color gradient background.
+    params:
+        - $startColor
+        - $endColor
+        - $midColor
+        - $colorStop
+*/
+/*
+    namespace: gradients
+    description: Adds a radial gradient background.
+    params:
+        - $innerColor
+        - $outerColor
+*/
+/*
+    namespace: gradients
+    description: Adds a striped gradient background.
+    params:
+        - $color
+        - $angle
+*/
+/*
+    namespace: transformations
+    description: Applies transfomation(s).
+    params:
+        - $transformation
+*/
+/*
+    namespace: transformations
+    description: Scales.
+    params:
+        - $ratio
+*/
+/*
+    namespace: transformations
+    description: Translates.
+    params:
+        - $x
+        - $y
+*/
+/*
+    namespace: transformations
+    description: Skews.
+    params:
+        - $x
+        - $y
+*/
+/*
+    namespace: transformations
+    description: Rotates.
+    params:
+        - $degrees
+*/
+/*
     namespace: buttons
     description: Adds button common styles.
     params:

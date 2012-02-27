@@ -1,31 +1,57 @@
-// Border
+/*
+    namespace: borders
+    description: Adds 1px solid border.
+    params:
+        - $color
+*/
 @mixin border($color: $borderColor) {
     border: 1px $color solid;
 }
 
-// Border radius
+/*
+    namespace: borders
+    description: Rounds bordes.
+    params:
+        - $radius
+*/
 @mixin border-radius($radius: $borderRadius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
     border-radius: $radius;
 }
 
-// Box shadow
+/*
+    namespace: borders
+    description: Adds box shadow.
+    params:
+        - $shadow
+*/
 @mixin box-shadow($shadow: $boxShadow) {
     -webkit-box-shadow: $shadow;
     -moz-box-shadow: $shadow;
     box-shadow: $shadow;
 }
 
-// Box sizing
+/*
+    namespace: sizing
+    description: Sets box sizing.
+    params:
+        - $sizing
+*/
 @mixin box-sizing($sizing: border-box) {
    -webkit-box-sizing: $sizing;
    -moz-box-sizing: $sizing;
    -o-box-sizing: $sizing;
-  box-sizing: $sizing;
+   box-sizing: $sizing;
 }
 
-// Gradient
+/*
+    namespace: gradients
+    description: Adds an horizontal gradient background.
+    params:
+        - $startColor
+        - $endColor
+*/
 @mixin gradient-horizontal(
     $startColor: $gradientStartColor,
     $endColor: $gradientEndColor
@@ -39,6 +65,13 @@
     background-image: linear-gradient(left, $startColor, $endColor);
     background-repeat: repeat-x;
 }
+/*
+    namespace: gradients
+    description: Adds a vertical gradient background.
+    params:
+        - $startColor
+        - $endColor
+*/
 @mixin gradient-vertical(
     $startColor: $gradientStartColor,
     $endColor: $gradientEndColor
@@ -52,6 +85,14 @@
     background-image: linear-gradient(top, $startColor, $endColor);
     background-repeat: repeat-x;
 }
+/*
+    namespace: gradients
+    description: Adds a directional gradient background..
+    params:
+        - $startColor
+        - $endColor
+        - $deg
+*/
 @mixin gradient-directional(
     $startColor: $gradientStartColor,
     $endColor: $gradientEndColor,
@@ -65,11 +106,20 @@
     background-image: -o-linear-gradient($deg, $startColor, $endColor);
     background-image: linear-gradient($deg, $startColor, $endColor);
 }
+/*
+    namespace: gradients
+    description: Adds a vertical three color gradient background.
+    params:
+        - $startColor
+        - $endColor
+        - $midColor
+        - $colorStop
+*/
 @mixin gradient-vertical-three-colors(
     $startColor: $gradientStartColor,
+    $endColor: $grandientEndColor,
     $midColor: mix($gradientStartColor, $gradientEndColor),
-    $colorStop: 50%,
-    $endColor: $grandientEndColor
+    $colorStop: 50%
 ) {
     background-color: mix($midColor, $endColor, 80%);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), color-stop($colorStop, $midColor), to($endColor));
@@ -80,6 +130,13 @@
     background-image: linear-gradient($startColor, $midColor $colorStop, $endColor);
     background-repeat: no-repeat;
 }
+/*
+    namespace: gradients
+    description: Adds a radial gradient background.
+    params:
+        - $innerColor
+        - $outerColor
+*/
 @mixin gradient-radial(
     $innerColor: $gradientStartColor,
     $outerColor:$gradientEndColor
@@ -91,6 +148,13 @@
     background-image: -ms-radial-gradient(circle, $innerColor, $outerColor);
     background-repeat: no-repeat;
 }
+/*
+    namespace: gradients
+    description: Adds a striped gradient background.
+    params:
+        - $color
+        - $angle
+*/
 @mixin grandient-striped(
     $color: $gradientStartColor,
     $angle: $gradientDeg
@@ -104,7 +168,12 @@
     background-image: linear-gradient($angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
 }
 
-// Transform
+/*
+    namespace: transformations
+    description: Applies transfomation(s).
+    params:
+        - $transformation
+*/
 @mixin transform($transformation) {
     -webkit-transform: $transformation;
     -moz-transform: $transformation;
@@ -112,15 +181,41 @@
     -o-transform: $transformation;
     transform: $transformation;
 }
+/*
+    namespace: transformations
+    description: Scales.
+    params:
+        - $ratio
+*/
 @mixin scale($ratio) {
     @include transform(scale($ratio));
 }
+/*
+    namespace: transformations
+    description: Translates.
+    params:
+        - $x
+        - $y
+*/
 @mixin translate($x: 0, $y: 0) {
     @include transform(translate($x, $y));
 }
+/*
+    namespace: transformations
+    description: Skews.
+    params:
+        - $x
+        - $y
+*/
 @mixin skew($x: 0, $y: 0) {
     @include transform(skew($x, $y));
 }
+/*
+    namespace: transformations
+    description: Rotates.
+    params:
+        - $degrees
+*/
 @mixin rotate($degrees) {
     @include transform(rotate($degrees));
 }

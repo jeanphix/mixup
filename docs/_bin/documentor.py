@@ -41,7 +41,9 @@ def put_docs_in_file(scss_file, source, flag, namespace, destination=None):
     f.write(file_content)
 
 
-put_docs_in_file("mixin/layout.scss", "docs/_sources/mixins.html",
+put_docs_in_file("mixin/style.scss", "docs/_sources/mixins.html",
+    "#{style}", "style", "docs/mixins.html")
+put_docs_in_file("mixin/layout.scss", "docs/mixins.html",
     "#{layout}", "layout", "docs/mixins.html")
 put_docs_in_file("mixin/component.scss", "docs/mixins.html",
     "#{component}", "components", "docs/mixins.html")

@@ -2,6 +2,78 @@
 layout: base
 title: mixins
 docs:
+- style:
+  label: style
+  namespaces:
+  - label: borders
+    mixins:
+    - description: Adds 1px solid border.
+      label: border
+      namespace: borders
+      params: [$color]
+    - description: Rounds bordes.
+      label: border-radius
+      namespace: borders
+      params: [$radius]
+    - description: Adds box shadow.
+      label: box-shadow
+      namespace: borders
+      params: [$shadow]
+  - label: sizing
+    mixins:
+    - description: Sets box sizing.
+      label: box-sizing
+      namespace: sizing
+      params: [$sizing]
+  - label: gradients
+    mixins:
+    - description: Adds an horizontal gradient background.
+      label: gradient-horizontal
+      namespace: gradients
+      params: [$startColor, $endColor]
+    - description: Adds a vertical gradient background.
+      label: gradient-vertical
+      namespace: gradients
+      params: [$startColor, $endColor]
+    - description: Adds a directional gradient background..
+      label: gradient-directional
+      namespace: gradients
+      params: [$startColor, $endColor, $deg]
+    - description: Adds a vertical three color gradient background.
+      label: gradient-vertical-three-colors
+      namespace: gradients
+      params: [$startColor, $endColor, $midColor, $colorStop]
+    - description: Adds a radial gradient background.
+      label: gradient-radial
+      namespace: gradients
+      params: [$innerColor, $outerColor]
+    - description: Adds a striped gradient background.
+      label: grandient-striped
+      namespace: gradients
+      params: [$color, $angle]
+  - label: transformations
+    mixins:
+    - description: Applies transfomation(s).
+      label: transform
+      namespace: transformations
+      params: [$transformation]
+    - description: Scales.
+      label: scale
+      namespace: transformations
+      params: [$ratio]
+    - description: Translates.
+      label: translate
+      namespace: transformations
+      params: [$x, $y]
+    - description: Skews.
+      label: skew
+      namespace: transformations
+      params: [$x, $y]
+    - description: Rotates.
+      label: rotate
+      namespace: transformations
+      params: [$degrees]
+
 - layout:
   label: layout
   namespaces:
