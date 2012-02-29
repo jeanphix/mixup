@@ -11,14 +11,14 @@ def extract_doc(source, topnamespace):
     f = open(source, 'r')
     file_content = f.read()
 
-    r = re.compile(r"/\*(.[^\*]*)\*/\n@mixin ([a-z\-]{1,})", re.DOTALL)
+    r = re.compile(r"/\*(.[^\*]*)//\*\n@mixin ([a-z\-]{1,})", re.DOTALL)
 
     docs = []
 
     current_namespace = {'label': None}
 
     for doc, mixin in r.findall(file_content):
-        doc_tree = load(doc)
+        doc_tree = load(doc.replace('//', ''))
         namespace = doc_tree['namespace']
         if current_namespace['label'] != namespace:
             if current_namespace['label'] is not None:

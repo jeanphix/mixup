@@ -1,7 +1,7 @@
 @import "style";
 
 
-//
+//*
 //    namespace: buttons
 //    description: Adds button common styles.
 //    params:
@@ -11,7 +11,7 @@
 //        - $borderColor
 //        - $radius
 //        - $shadow
-//
+//*
 @mixin button-base(
     $padding: $buttonPadding,
     $color: $buttonColor,
@@ -34,7 +34,7 @@
         color: $hoverColor;
     }
 }
-//
+//*
 //    namespace: buttons
 //    description: Sets an element as a basic button.
 //    params:
@@ -50,7 +50,7 @@
 //    demo: >
 //        <p><a href="#" class="button">I'm a link</a></p>
 //        <p><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
-//
+//*
 @mixin button(
     $padding: $buttonPadding,
     $color: $buttonColor,
@@ -76,7 +76,7 @@
         background: $hoverBackground;
     }
 }
-//
+//*
 //    namespace: buttons
 //    description: Sets an element as a button with gradient background.
 //    params:
@@ -94,7 +94,7 @@
 //    demo: >
 //        <p><a href="#" class="button-gradient">I'm a link</a></p>
 //        <p><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
-//
+//*
 @mixin button-gradient(
     $padding: $buttonPadding,
     $color: $buttonColor,
@@ -122,13 +122,13 @@
         @include gradient-vertical($hoverStartColor, $hoverEndColor);
     }
 }
-//
+//*
 //    namespace: boxes
 //    description: Adds box common styles.
 //    params:
 //        - $padding
 //        - $radius
-//
+//*
 @mixin box-base(
     $padding: $boxPadding,
     $radius: $boxRadius
@@ -144,14 +144,14 @@
         margin-bottom: 0;
     }
 }
-//
+//*
 //    namespace: boxes
 //    description: Adds box color styles.
 //    params:
 //        - $color
 //        - $borderColor
 //        - $background
-//
+//*
 @mixin box-colors(
     $color: $boxColor,
     $borderColor: $boxBorderColor,
@@ -161,7 +161,7 @@
     @include border($borderColor);
     background: $background;
 }
-//
+//*
 //    namespace: boxes
 //    description: Sets an element as a basic box.
 //    params:
@@ -171,7 +171,7 @@
 //        - $radius
 //        - $background
 //    code: body > section > div { @include box(); }
-//
+//*
 @mixin box(
     $padding: $boxPadding,
     $color: $boxColor,
@@ -182,7 +182,7 @@
     @include box-base($padding, $radius);
     @include box-colors($color, $borderColor, $background);
 }
-//
+//*
 //    namespace: boxes
 //    description: Adds success colors to a box.
 //    params:
@@ -196,7 +196,7 @@
 //        }
 //    demo: >
 //        <p class="success">I'm a success box.</p>
-//
+//*
 @mixin box-colors-success(
     $color: $successColor,
     $borderColor: $successColor,
@@ -204,7 +204,7 @@
 ) {
     @include box-colors($color, $borderColor, $background);
 }
-//
+//*
 //    namespace: boxes
 //    description: Adds error colors to a box.
 //    params:
@@ -218,7 +218,7 @@
 //        }
 //    demo: >
 //        <p class="error">I'm an error box.</p>
-//
+//*
 @mixin box-colors-error(
     $color: $errorColor,
     $borderColor: $errorColor,
@@ -227,7 +227,7 @@
     @include box-colors($color, $borderColor, $background);
 }
 
-//
+//*
 //    namespace: navigation
 //    description: Sets an element as an horizontal navigation block.
 //    params:
@@ -249,7 +249,7 @@
 //                <li><a href="#" class="current">item 3</a></li>
 //            </ul>
 //        </nav>
-//
+//*
 @mixin navigation-horizontal(
     $color: $navigationColor,
     $height: $navigationHorizontalHeight,
@@ -286,7 +286,7 @@
         }
     }
 }
-//
+//*
 //    namespace: forms
 //    description: Adds form fields styles.
 //    params:
@@ -294,7 +294,7 @@
 //        - $borderColor
 //        - $background
 //        - $radius
-//
+//*
 @mixin fields (
     $width: $formFieldWidth,
     $borderColor: $formFieldBorderColor,
@@ -316,7 +316,7 @@
         width: auto;
     }
 }
-//
+//*
 //    namespace: forms
 //    description: Adds form styles.
 //    params:
@@ -325,7 +325,7 @@
 //        - $fieldBackground
 //        - $fieldRadius
 //        - $lineHeight
-//
+//*
 @mixin form(
     $fieldWidth: $formFieldWidth,
     $fieldBorderColor: $formFieldBorderColor,
@@ -348,7 +348,7 @@
         @include button-gradient();
     }
 }
-//
+//*
 //    namespace: tables
 //    description: Adds table styles.
 //    demo: >
@@ -400,7 +400,7 @@
 //        - $cellPadding
 //        - $oddBackground
 //        - $evenBackground
-//
+//*
 @mixin table (
     $width: 100%,
     $borderColor: $tableBorderColor,
@@ -428,13 +428,13 @@
         border-top: $borderColor 1px solid;
     }
 }
-//
+//*
 //    namespace: tables
 //    description: Adds borders on tables.
 //    params:
 //        - $borderColor
 //        - $radius
-//
+//*
 @mixin table-borders (
     $borderColor: $tableBorderColor,
     $radius: $tableRadius
@@ -465,7 +465,7 @@
         }
     }
 }
-//
+//*
 //    namespace: tables
 //    description: Adds bordered table styles.
 //    demo: >
@@ -518,7 +518,7 @@
 //        - $oddBackground
 //        - $evenBackground
 //        - $radius
-//
+//*
 @mixin table-bordered (
     $width: 100%,
     $borderColor: $tableBorderColor,

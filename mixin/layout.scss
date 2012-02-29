@@ -1,42 +1,42 @@
 @import "style";
 
 
-//
+//*
 //    namespace: containers
 //    description: Base styles for containers.
-//
+//*
 @mixin container() {
     display: block;
 }
-//
+//*
 //    namespace: containers
 //    description: Sets an element as a center block.
 //    params:
 //        - $width
 //    code: body > section { @include container-center(); }
-//
+//*
 @mixin container-center($width: $containerWidth) {
     @include container();
     width: $width;
     margin: 0 auto;
 }
-//
+//*
 //    namespace: containers
 //    description: Sets an element as a padded block.
 //    params:
 //        - $padding
 //    code: body > section { @include container-padded(); }
-//
+//*
 @mixin container-padded($padding: $containerPadding) {
     @include container();
     width: auto;
     padding-left: $padding;
     padding-right: $padding;
 }
-//
+//*
 //    namespace: grids
 //    description: Sets an element as a cell container.
-//
+//*
 @mixin row() {
     padding: 0;
     margin-top: 1em;
@@ -47,12 +47,12 @@
         content: "";
     }
 }
-//
+//*
 //    namespace: grids
 //    description: Adds common cell styles.
 //    params:
 //        - $spacing
-//
+//*
 @mixin cell-base(
     $spacing: 2%
 ) {
@@ -66,14 +66,14 @@
         margin-right: 0;
     }
 }
-//
+//*
 //    namespace: grids
 //    description: Adds cell dimension styles.
 //    params:
 //        - $colspan
 //        - $columnCount
 //        - $spacing
-//
+//*
 @mixin cell-width(
     $colspan: 1,
     $columnCount: $rowColumnCount,
@@ -81,7 +81,7 @@
 ) {
     width: floor((100% - ($columnCount - 1) * $spacing) / $columnCount * $colspan + ($colspan - 1) * $spacing);
 }
-//
+//*
 //    namespace: grids
 //    description: Sets an element as cell.
 //    params:
@@ -106,7 +106,7 @@
 //            <p>I'm another cell.</p>
 //        </div>
 //
-//
+//*
 @mixin cell(
     $colspan: 1,
     $columnCount: $rowColumnCount,
