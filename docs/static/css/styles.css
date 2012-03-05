@@ -65,6 +65,9 @@ h2,
 h3 {
   text-shadow: 1px 1px #fff; }
 
+h4 {
+  margin: 1em 0; }
+
 li {
   list-style-position: inside; }
 
