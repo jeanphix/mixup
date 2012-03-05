@@ -1,0 +1,118 @@
+@import "../mixin/default/all";
+@import "../mixin/layout";
+@import "../mixin/component";
+
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    padding: 0;
+    background: url(../images/background.png) #ececec;
+    > header > div,
+    > section > div,
+    > footer > div {
+        @include container-padded();
+    }
+}
+@media screen and (min-width: 1000px) {
+    body {
+        > header > div,
+        > section > div,
+        > footer > div {
+            @include container-center();
+        }
+    }
+}
+body > header {
+    color: #fff;
+    @include gradient-vertical();
+    * {
+        font-size: 100%;
+    }
+    > div {
+        @include navigation-horizontal();
+        > h1 {
+            margin: 0;
+            font-weight: normal;
+        }
+    }
+}
+h1,
+h2,
+h3 {
+    text-shadow: 1px 1px #fff;
+}
+a {
+    color: #08c;
+    &:hover,
+    &:active {
+        color: #005580;
+    }
+}
+
+/* Docs */
+.mixin,
+form {
+    @include box($background: transparent);
+}
+.row > p {
+    @include box();
+}
+@media screen and (min-width: 400px) {
+    .row {
+        @include row();
+        > p {
+            @include cell(4);
+            &:last-child {
+                @include cell-width(8);
+            }
+        }
+    }
+}
+.button {
+    @include button();
+}
+.button-gradient {
+    @include button-gradient();
+}
+.success,
+.error {
+    @include box-base();
+}
+.success {
+    @include box-colors-success();
+}
+.error {
+    @include box-colors-error();
+}
+.navigation-horizontal {
+    @include gradient-vertical();
+    @include navigation-horizontal();
+}
+table {
+    @include table();
+}
+table.bordered {
+    @include table-borders();
+}
+/* Form */
+form {
+    @include form();
+    label:first-child {
+        display: block;
+    }
+}
+@media screen and (min-width: 800px) {
+    form {
+        label:first-child {
+            display: inline-block;
+            width: 250px;
+            margin-right: 10px;
+            text-align: right;
+        }
+        input[type=checkbox]:first-child {
+            margin-left: 265px;
+        }
+    }
+}
