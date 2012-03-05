@@ -4,25 +4,15 @@ title: mixup - sass mixins & helpers
 ---
 
 <h1>mixup!</h1>
-<p><strong>mixup!</strong> is a set of sass mixins coming with default styles. It is designed to allow you to quickly integrate webdesigns with DRYer styles.</p>
-<p>There are three mixin families:</p>
+<p>mixup is a set of <a href="http://sass-lang.com/" title="sass homepage">sass</a> mixins that helps you to build your web designs with DRYer stylesheets.</p>
+{% highlight sh %}
+$ gem install sass
+$ git clone git@github.com:jeanphix/mixup.git
+{% endhighlight %}
+<p>mixins are split into three files:</p>
 <ul>
     <li><a href="style.html" title="go to style page">style.scss</a>: the low level styles (borders, backgrounds, gradients...).</li>
     <li><a href="component.html" title="go to component page">component.scss</a>: ready to skin components (buttons, tables, forms...).</li>
     <li><a href="layout.html" title="go to layout page">layout.scss</a>: the layout builders (grids, containers...).</li>
 </ul>
-<h2>Installation</h2>
-{% highlight sh %}
-$ gem install sass
-$ git clone git@github.com:jeanphix/mixup.git
-{% endhighlight %}
-<h2>Sample usage</h2>
-{% highlight css %}
-@import "mixup/mixin/default/all";
-@import "mixup/mixin/component";
-
-a {
-    @include button-simple();
-}
-{% endhighlight %}
 

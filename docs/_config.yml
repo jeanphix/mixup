@@ -1,4 +1,4 @@
-pygments: true
+pygments: false
 
 navigation:
 - text: home
