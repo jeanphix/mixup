@@ -1,85 +1,366 @@
----
-layout: base
-title: mixins
-docs:
-- label: borders
-  mixins:
-  - description: Adds 1px solid border.
-    label: border
-    namespace: borders
-    params: [$color]
-  - description: Rounds bordes.
-    label: border-radius
-    namespace: borders
-    params: [$radius]
-  - description: Adds box shadow.
-    label: box-shadow
-    namespace: borders
-    params: [$shadow]
-- label: sizing
-  mixins:
-  - description: Sets box sizing.
-    label: box-sizing
-    namespace: sizing
-    params: [$sizing]
-- label: gradients
-  mixins:
-  - description: Adds an horizontal gradient background.
-    label: gradient-horizontal
-    namespace: gradients
-    params: [$startColor, $endColor]
-  - description: Adds a vertical gradient background.
-    label: gradient-vertical
-    namespace: gradients
-    params: [$startColor, $endColor]
-  - description: Adds a directional gradient background..
-    label: gradient-directional
-    namespace: gradients
-    params: [$startColor, $endColor, $deg]
-  - description: Adds a vertical three color gradient background.
-    label: gradient-vertical-three-colors
-    namespace: gradients
-    params: [$startColor, $endColor, $midColor, $colorStop]
-  - description: Adds a radial gradient background.
-    label: gradient-radial
-    namespace: gradients
-    params: [$innerColor, $outerColor]
-  - description: Adds a striped gradient background.
-    label: gradient-striped
-    namespace: gradients
-    params: [$color, $angle]
-- label: transformations
-  mixins:
-  - description: Applies transfomation(s).
-    label: transform
-    namespace: transformations
-    params: [$transformation]
-- label: background
-  mixins:
-  - description: Alternates background.
-    label: alternate-background
-    namespace: background
-    params: [$oddBackground, $evenBackground]
-- label: transformations
-  mixins:
-  - description: Scales.
-    label: scale
-    namespace: transformations
-    params: [$ratio]
-  - description: Translates.
-    label: translate
-    namespace: transformations
-    params: [$x, $y]
-  - description: Skews.
-    label: skew
-    namespace: transformations
-    params: [$x, $y]
-  - description: Rotates.
-    label: rotate
-    namespace: transformations
-    params: [$degrees]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="static/css/normalize/normalize.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/pygments.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/styles.css" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>mixins</title>
+        <!--[if lt IE 9]>
+            <script src="static/js/html5-ie.js"></script>
+            <script src="static/js/mootools-core-1.4.4-full-compat-yc.js"></script>
+            <script src="static/js/selectivizr/selectivizr.js"></script>
+            <script src="static/js/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header>
+            <div>
+                <nav role="navigation">
+                    <ul>
+                        
+                            <li><a href="index.html">home</a></li>
+                        
+                            <li><a href="style.html" class="current">styles</a></li>
+                        
+                            <li><a href="layout.html">layout</a></li>
+                        
+                            <li><a href="component.html">components</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section>
+            <div>
+                <h1>style</h1>
 
----
+    <h2>borders</h2>
+    
+        <div class="mixin">
+            <h3>border()</h3>
+            
+                <p>Adds 1px solid border.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$color</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>border-radius()</h3>
+            
+                <p>Rounds bordes.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$radius</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>box-shadow()</h3>
+            
+                <p>Adds box shadow.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$shadow</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
 
-<h1>style</h1>
-{% include docs.textile %}
+    <h2>sizing</h2>
+    
+        <div class="mixin">
+            <h3>box-sizing()</h3>
+            
+                <p>Sets box sizing.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$sizing</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+
+    <h2>gradients</h2>
+    
+        <div class="mixin">
+            <h3>gradient-horizontal()</h3>
+            
+                <p>Adds an horizontal gradient background.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$startColor</li>
+                    
+                        <li>$endColor</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>gradient-vertical()</h3>
+            
+                <p>Adds a vertical gradient background.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$startColor</li>
+                    
+                        <li>$endColor</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>gradient-directional()</h3>
+            
+                <p>Adds a directional gradient background..</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$startColor</li>
+                    
+                        <li>$endColor</li>
+                    
+                        <li>$deg</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>gradient-vertical-three-colors()</h3>
+            
+                <p>Adds a vertical three color gradient background.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$startColor</li>
+                    
+                        <li>$endColor</li>
+                    
+                        <li>$midColor</li>
+                    
+                        <li>$colorStop</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>gradient-radial()</h3>
+            
+                <p>Adds a radial gradient background.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$innerColor</li>
+                    
+                        <li>$outerColor</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>gradient-striped()</h3>
+            
+                <p>Adds a striped gradient background.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$color</li>
+                    
+                        <li>$angle</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+
+    <h2>transformations</h2>
+    
+        <div class="mixin">
+            <h3>transform()</h3>
+            
+                <p>Applies transfomation(s).</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$transformation</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+
+    <h2>background</h2>
+    
+        <div class="mixin">
+            <h3>alternate-background()</h3>
+            
+                <p>Alternates background.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$oddBackground</li>
+                    
+                        <li>$evenBackground</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+
+    <h2>transformations</h2>
+    
+        <div class="mixin">
+            <h3>scale()</h3>
+            
+                <p>Scales.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$ratio</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>translate()</h3>
+            
+                <p>Translates.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$x</li>
+                    
+                        <li>$y</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>skew()</h3>
+            
+                <p>Skews.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$x</li>
+                    
+                        <li>$y</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>rotate()</h3>
+            
+                <p>Rotates.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$degrees</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+
+
+
+            </div>
+        </section>
+        <footer>
+            <div>
+                <p>brought to you by <a href="http://jeanphix.me">jeanphix</a></p>
+                <a href="https://github.com/jeanphix/mixup"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+            </div>
+        </footer>
+        <script src="static/js/demo.js"></script>
+    </body>
+</html>
+

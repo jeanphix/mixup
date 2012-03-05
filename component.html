@@ -1,130 +1,572 @@
----
-layout: base
-title: mixins
-docs:
-- label: buttons
-  mixins:
-  - description: Adds button common styles.
-    label: button-base
-    namespace: buttons
-    params: [$padding, $color, $hoverColor, $borderColor, $radius, $shadow]
-  - code: input[type=submit] { @include button(); }
-    demo: '<p><a href="#" class="button">I''m a link</a></p> <p><input type="submit"
-      value="I''m an input[type=submit]" class="button" /></p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="static/css/normalize/normalize.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/pygments.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/styles.css" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>mixins</title>
+        <!--[if lt IE 9]>
+            <script src="static/js/html5-ie.js"></script>
+            <script src="static/js/mootools-core-1.4.4-full-compat-yc.js"></script>
+            <script src="static/js/selectivizr/selectivizr.js"></script>
+            <script src="static/js/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header>
+            <div>
+                <nav role="navigation">
+                    <ul>
+                        
+                            <li><a href="index.html">home</a></li>
+                        
+                            <li><a href="style.html">styles</a></li>
+                        
+                            <li><a href="layout.html">layout</a></li>
+                        
+                            <li><a href="component.html" class="current">components</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section>
+            <div>
+                <h1>mixins</h1>
 
-      '
-    description: Sets an element as a basic button.
-    label: button
-    namespace: buttons
-    params: [$padding, $color, $hoverColor, $borderColor, $radius, $shadow, $background,
-      $hoverBackground]
-  - code: input[type=submit] { @include button-gradient(); }
-    demo: '<p><a href="#" class="button-gradient">I''m a link</a></p> <p><input type="submit"
-      value="I''m an input[type=submit]" class="button-gradient" /></p>
+    <h2>buttons</h2>
+    
+        <div class="mixin">
+            <h3>button-base()</h3>
+            
+                <p>Adds button common styles.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$padding</li>
+                    
+                        <li>$color</li>
+                    
+                        <li>$hoverColor</li>
+                    
+                        <li>$borderColor</li>
+                    
+                        <li>$radius</li>
+                    
+                        <li>$shadow</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>button()</h3>
+            
+                <p>Sets an element as a basic button.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$padding</li>
+                    
+                        <li>$color</li>
+                    
+                        <li>$hoverColor</li>
+                    
+                        <li>$borderColor</li>
+                    
+                        <li>$radius</li>
+                    
+                        <li>$shadow</li>
+                    
+                        <li>$background</li>
+                    
+                        <li>$hoverBackground</li>
+                    
+                </ul>
+            
+            
+                <h4>sample code</h4>
+                <div class="highlight"><pre><code class="css"><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">submit</span><span class="o">]</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">button</span><span class="p">();</span> <span class="p">}</span>
+</code></pre>
+</div>
 
-      '
-    description: Sets an element as a button with gradient background.
-    label: button-gradient
-    namespace: buttons
-    params: [$padding, $color, $hoverColor, $borderColor, $radius, $shadow, $startColor,
-      $endColor, $hoverStartColor, $hoverEndColor]
-- label: boxes
-  mixins:
-  - description: Adds box common styles.
-    label: box-base
-    namespace: boxes
-    params: [$padding, $radius]
-  - description: Adds box color styles.
-    label: box-colors
-    namespace: boxes
-    params: [$color, $borderColor, $background]
-  - code: body > section > div { @include box(); }
-    description: Sets an element as a basic box.
-    label: box
-    namespace: boxes
-    params: [$padding, $color, $borderColor, $radius, $background]
-  - code: ".success {\n    @include box-base();\n    @include box-colors-success();\n\
-      }\n"
-    demo: '<p class="success">I''m a success box.</p>
+            
+            
+                <h4>sample</h4>
+                <p><a href="#" class="button">I'm a link</a></p> <p><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
 
-      '
-    description: Adds success colors to a box.
-    label: box-colors-success
-    namespace: boxes
-    params: [$color, $borderColor, $background]
-  - code: ".error {\n    @include box-base();\n    @include box-colors-error();\n\
-      }\n"
-    demo: '<p class="error">I''m an error box.</p>
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>button-gradient()</h3>
+            
+                <p>Sets an element as a button with gradient background.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$padding</li>
+                    
+                        <li>$color</li>
+                    
+                        <li>$hoverColor</li>
+                    
+                        <li>$borderColor</li>
+                    
+                        <li>$radius</li>
+                    
+                        <li>$shadow</li>
+                    
+                        <li>$startColor</li>
+                    
+                        <li>$endColor</li>
+                    
+                        <li>$hoverStartColor</li>
+                    
+                        <li>$hoverEndColor</li>
+                    
+                </ul>
+            
+            
+                <h4>sample code</h4>
+                <div class="highlight"><pre><code class="css"><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">submit</span><span class="o">]</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">button</span><span class="o">-</span><span class="n">gradient</span><span class="p">();</span> <span class="p">}</span>
+</code></pre>
+</div>
 
-      '
-    description: Adds error colors to a box.
-    label: box-colors-error
-    namespace: boxes
-    params: [$color, $borderColor, $errorBackground]
-- label: navigation
-  mixins:
-  - code: "body > header > nav {\n    @include gradient-vertical();\n    @include\
-      \ navigation-horizontal();\n}\n"
-    demo: "<nav class=\"navigation-horizontal\">\n    <ul>\n        <li><a href=\"\
-      #\">item 1</a></li>\n        <li><a href=\"#\">item 2</a></li>\n        <li><a\
-      \ href=\"#\" class=\"current\">item 3</a></li>\n    </ul>\n</nav>\n"
-    description: Sets an element as an horizontal navigation block.
-    label: navigation-horizontal
-    namespace: navigation
-    params: [$color, $height, $currentBackgroundColor, $focusColor, $activeClass]
-- label: forms
-  mixins:
-  - description: Adds form fields styles.
-    label: fields
-    namespace: forms
-    params: [$width, $borderColor, $background, $radius]
-  - description: Adds form styles.
-    label: form
-    namespace: forms
-    params: [$fieldWidth, $fieldBorderColor, $fieldBackground, $fieldRadius, $lineHeight]
-- label: tables
-  mixins:
-  - demo: "<table class=\"no-border\">\n    <thead>\n        <tr>\n            <th>header\
-      \ 1</th>\n            <th>header 2</th>\n            <th>header 3</th>\n   \
-      \         <th>header 4</th>\n        </tr>\n    </thead>\n    <tbody>\n    \
-      \    <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n      \
-      \      <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n       \
-      \ <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n         \
-      \   <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n        <tr>\n\
-      \            <td>cell 1</td>\n            <td>cell 2</td>\n            <td>cell\
-      \ 3</td>\n            <td>cell 4</td>\n        </tr>\n        <tr>\n       \
-      \     <td>cell 1</td>\n            <td>cell 2</td>\n            <td>cell 3</td>\n\
-      \            <td>cell 4</td>\n        </tr>\n        <tr>\n            <td>cell\
-      \ 1</td>\n            <td>cell 2</td>\n            <td>cell 3</td>\n       \
-      \     <td>cell 4</td>\n        </tr>\n    </tbody>\n</table>\n"
-    description: Adds table styles.
-    label: table
-    namespace: tables
-    params: [$width, $borderColor, $cellPadding, $oddBackground, $evenBackground]
-  - description: Adds borders on tables.
-    label: table-borders
-    namespace: tables
-    params: [$borderColor, $radius]
-  - demo: "<table class=\"bordered\">\n    <thead>\n        <tr>\n            <th>header\
-      \ 1</th>\n            <th>header 2</th>\n            <th>header 3</th>\n   \
-      \         <th>header 4</th>\n        </tr>\n    </thead>\n    <tbody>\n    \
-      \    <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n      \
-      \      <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n       \
-      \ <tr>\n            <td>cell 1</td>\n            <td>cell 2</td>\n         \
-      \   <td>cell 3</td>\n            <td>cell 4</td>\n        </tr>\n        <tr>\n\
-      \            <td>cell 1</td>\n            <td>cell 2</td>\n            <td>cell\
-      \ 3</td>\n            <td>cell 4</td>\n        </tr>\n        <tr>\n       \
-      \     <td>cell 1</td>\n            <td>cell 2</td>\n            <td>cell 3</td>\n\
-      \            <td>cell 4</td>\n        </tr>\n        <tr>\n            <td>cell\
-      \ 1</td>\n            <td>cell 2</td>\n            <td>cell 3</td>\n       \
-      \     <td>cell 4</td>\n        </tr>\n    </tbody>\n</table>\n"
-    description: Adds bordered table styles.
-    label: table-bordered
-    namespace: tables
-    params: [$width, $borderColor, $cellPadding, $oddBackground, $evenBackground,
-      $radius]
+            
+            
+                <h4>sample</h4>
+                <p><a href="#" class="button-gradient">I'm a link</a></p> <p><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
 
----
+            
+        </div>
+    
 
-<h1>mixins</h1>
-{% include docs.textile %}
+    <h2>boxes</h2>
+    
+        <div class="mixin">
+            <h3>box-base()</h3>
+            
+                <p>Adds box common styles.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$padding</li>
+                    
+                        <li>$radius</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>box-colors()</h3>
+            
+                <p>Adds box color styles.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$color</li>
+                    
+                        <li>$borderColor</li>
+                    
+                        <li>$background</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>box()</h3>
+            
+                <p>Sets an element as a basic box.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$padding</li>
+                    
+                        <li>$color</li>
+                    
+                        <li>$borderColor</li>
+                    
+                        <li>$radius</li>
+                    
+                        <li>$background</li>
+                    
+                </ul>
+            
+            
+                <h4>sample code</h4>
+                <div class="highlight"><pre><code class="css"><span class="nt">body</span> <span class="o">&gt;</span> <span class="nt">section</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">box</span><span class="p">();</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>box-colors-success()</h3>
+            
+                <p>Adds success colors to a box.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$color</li>
+                    
+                        <li>$borderColor</li>
+                    
+                        <li>$background</li>
+                    
+                </ul>
+            
+            
+                <h4>sample code</h4>
+                <div class="highlight"><pre><code class="css"><span class="nc">.success</span> <span class="p">{</span>
+    <span class="o">@</span><span class="n">include</span> <span class="n">box</span><span class="o">-</span><span class="n">base</span><span class="p">();</span>
+    <span class="o">@</span><span class="n">include</span> <span class="n">box</span><span class="o">-</span><span class="n">colors</span><span class="o">-</span><span class="n">success</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+            
+            
+                <h4>sample</h4>
+                <p class="success">I'm a success box.</p>
+
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>box-colors-error()</h3>
+            
+                <p>Adds error colors to a box.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$color</li>
+                    
+                        <li>$borderColor</li>
+                    
+                        <li>$errorBackground</li>
+                    
+                </ul>
+            
+            
+                <h4>sample code</h4>
+                <div class="highlight"><pre><code class="css"><span class="nc">.error</span> <span class="p">{</span>
+    <span class="o">@</span><span class="n">include</span> <span class="n">box</span><span class="o">-</span><span class="n">base</span><span class="p">();</span>
+    <span class="o">@</span><span class="n">include</span> <span class="n">box</span><span class="o">-</span><span class="n">colors</span><span class="o">-</span><span class="n">error</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+            
+            
+                <h4>sample</h4>
+                <p class="error">I'm an error box.</p>
+
+            
+        </div>
+    
+
+    <h2>navigation</h2>
+    
+        <div class="mixin">
+            <h3>navigation-horizontal()</h3>
+            
+                <p>Sets an element as an horizontal navigation block.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$color</li>
+                    
+                        <li>$height</li>
+                    
+                        <li>$currentBackgroundColor</li>
+                    
+                        <li>$focusColor</li>
+                    
+                        <li>$activeClass</li>
+                    
+                </ul>
+            
+            
+                <h4>sample code</h4>
+                <div class="highlight"><pre><code class="css"><span class="nt">body</span> <span class="o">&gt;</span> <span class="nt">header</span> <span class="o">&gt;</span> <span class="nt">nav</span> <span class="p">{</span>
+    <span class="o">@</span><span class="n">include</span> <span class="n">gradient</span><span class="o">-</span><span class="n">vertical</span><span class="p">();</span>
+    <span class="o">@</span><span class="n">include</span> <span class="n">navigation</span><span class="o">-</span><span class="n">horizontal</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+            
+            
+                <h4>sample</h4>
+                <nav class="navigation-horizontal">
+    <ul>
+        <li><a href="#">item 1</a></li>
+        <li><a href="#">item 2</a></li>
+        <li><a href="#" class="current">item 3</a></li>
+    </ul>
+</nav>
+
+            
+        </div>
+    
+
+    <h2>forms</h2>
+    
+        <div class="mixin">
+            <h3>fields()</h3>
+            
+                <p>Adds form fields styles.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$width</li>
+                    
+                        <li>$borderColor</li>
+                    
+                        <li>$background</li>
+                    
+                        <li>$radius</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>form()</h3>
+            
+                <p>Adds form styles.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$fieldWidth</li>
+                    
+                        <li>$fieldBorderColor</li>
+                    
+                        <li>$fieldBackground</li>
+                    
+                        <li>$fieldRadius</li>
+                    
+                        <li>$lineHeight</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+
+    <h2>tables</h2>
+    
+        <div class="mixin">
+            <h3>table()</h3>
+            
+                <p>Adds table styles.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$width</li>
+                    
+                        <li>$borderColor</li>
+                    
+                        <li>$cellPadding</li>
+                    
+                        <li>$oddBackground</li>
+                    
+                        <li>$evenBackground</li>
+                    
+                </ul>
+            
+            
+            
+                <h4>sample</h4>
+                <table class="no-border">
+    <thead>
+        <tr>
+            <th>header 1</th>
+            <th>header 2</th>
+            <th>header 3</th>
+            <th>header 4</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+        </tr>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+        </tr>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+        </tr>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+        </tr>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+        </tr>
+    </tbody>
+</table>
+
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>table-borders()</h3>
+            
+                <p>Adds borders on tables.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$borderColor</li>
+                    
+                        <li>$radius</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>table-bordered()</h3>
+            
+                <p>Adds bordered table styles.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$width</li>
+                    
+                        <li>$borderColor</li>
+                    
+                        <li>$cellPadding</li>
+                    
+                        <li>$oddBackground</li>
+                    
+                        <li>$evenBackground</li>
+                    
+                        <li>$radius</li>
+                    
+                </ul>
+            
+            
+            
+                <h4>sample</h4>
+                <table class="bordered">
+    <thead>
+        <tr>
+            <th>header 1</th>
+            <th>header 2</th>
+            <th>header 3</th>
+            <th>header 4</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+        </tr>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+        </tr>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+        </tr>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+        </tr>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+        </tr>
+    </tbody>
+</table>
+
+            
+        </div>
+    
+
+
+
+            </div>
+        </section>
+        <footer>
+            <div>
+                <p>brought to you by <a href="http://jeanphix.me">jeanphix</a></p>
+                <a href="https://github.com/jeanphix/mixup"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+            </div>
+        </footer>
+        <script src="static/js/demo.js"></script>
+    </body>
+</html>
+

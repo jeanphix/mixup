@@ -1,9 +1,40 @@
----
-layout: base
-title: mixup - sass mixins & helpers
----
-
-<h1>mixup!</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="static/css/normalize/normalize.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/pygments.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/styles.css" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>mixup - sass mixins & helpers</title>
+        <!--[if lt IE 9]>
+            <script src="static/js/html5-ie.js"></script>
+            <script src="static/js/mootools-core-1.4.4-full-compat-yc.js"></script>
+            <script src="static/js/selectivizr/selectivizr.js"></script>
+            <script src="static/js/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header>
+            <div>
+                <nav role="navigation">
+                    <ul>
+                        
+                            <li><a href="index.html" class="current">home</a></li>
+                        
+                            <li><a href="style.html">styles</a></li>
+                        
+                            <li><a href="layout.html">layout</a></li>
+                        
+                            <li><a href="component.html">components</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section>
+            <div>
+                <h1>mixup!</h1>
 <p><strong>mixup!</strong> is a set of sass mixins coming with default styles. It is designed to allow you to quickly integrate webdesigns with DRYer styles.</p>
 <p>There are three mixin families:</p>
 <ul>
@@ -12,16 +43,32 @@ title: mixup - sass mixins & helpers
     <li><a href="/layout.html" title="go to layout page">layout.scss</a>: the layout builders (grids, containers...).</li>
 </ul>
 <h2>Installation</h2>
-{% highlight bash %}
-    gem install sass
-    git clone git@github.com:jeanphix/mixup.git
-{% endhighlight %}
-<h2>Sample usage</h2>
-{% highlight css %}
-@import "mixup/mixin/default/all";
-@import "mixup/mixin/component";
+<div class="highlight"><pre><code class="sh"><span class="nv">$ </span>gem install sass
+<span class="nv">$ </span>git clone git@github.com:jeanphix/mixup.git
+</code></pre>
+</div>
 
-a {
-    @include button-simple();
-}
-{% endhighlight %}
+<h2>Sample usage</h2>
+<div class="highlight"><pre><code class="css"><span class="k">@import</span> <span class="s2">&quot;mixup/mixin/default/all&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;mixup/mixin/component&quot;</span><span class="p">;</span>
+
+<span class="nt">a</span> <span class="p">{</span>
+    <span class="o">@</span><span class="n">include</span> <span class="n">button</span><span class="o">-</span><span class="n">simple</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+
+            </div>
+        </section>
+        <footer>
+            <div>
+                <p>brought to you by <a href="http://jeanphix.me">jeanphix</a></p>
+                <a href="https://github.com/jeanphix/mixup"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+            </div>
+        </footer>
+        <script src="static/js/demo.js"></script>
+    </body>
+</html>
+

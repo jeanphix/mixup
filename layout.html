@@ -1,42 +1,206 @@
----
-layout: base
-title: mixins
-docs:
-- label: containers
-  mixins:
-  - {description: Base styles for containers., label: container, namespace: containers}
-  - code: body > section { @include container-center(); }
-    description: Sets an element as a center block.
-    label: container-center
-    namespace: containers
-    params: [$width]
-  - code: body > section { @include container-padded(); }
-    description: Sets an element as a padded block.
-    label: container-padded
-    namespace: containers
-    params: [$padding]
-- label: grids
-  mixins:
-  - {description: Sets an element as a cell container., label: row, namespace: grids}
-  - description: Adds common cell styles.
-    label: cell-base
-    namespace: grids
-    params: [$spacing]
-  - description: Adds cell dimension styles.
-    label: cell-width
-    namespace: grids
-    params: [$colspan, $columnCount, $spacing]
-  - code: "@media screen and (min-width: 400px) {\n    .row {\n        @include row();\n\
-      \         {\n            @include cell(4);\n            &:last-child {\n   \
-      \             @include cell-width(8);\n            }\n        }\n    }\n}\n"
-    demo: "<div class=\"row\">\n    <p>I'm a cell.</p>\n    <p>I'm another cell.</p>\n\
-      </div>\n"
-    description: Sets an element as cell.
-    label: cell
-    namespace: grids
-    params: [$colspan, $columnCount, $spacing]
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="static/css/normalize/normalize.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/pygments.css" />
+        <link type="text/css" rel="stylesheet" href="static/css/styles.css" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>mixins</title>
+        <!--[if lt IE 9]>
+            <script src="static/js/html5-ie.js"></script>
+            <script src="static/js/mootools-core-1.4.4-full-compat-yc.js"></script>
+            <script src="static/js/selectivizr/selectivizr.js"></script>
+            <script src="static/js/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header>
+            <div>
+                <nav role="navigation">
+                    <ul>
+                        
+                            <li><a href="index.html">home</a></li>
+                        
+                            <li><a href="style.html">styles</a></li>
+                        
+                            <li><a href="layout.html" class="current">layout</a></li>
+                        
+                            <li><a href="component.html">components</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section>
+            <div>
+                <h1>layout</h1>
 
----
+    <h2>containers</h2>
+    
+        <div class="mixin">
+            <h3>container()</h3>
+            
+                <p>Base styles for containers.</p>
+            
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>container-center()</h3>
+            
+                <p>Sets an element as a center block.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$width</li>
+                    
+                </ul>
+            
+            
+                <h4>sample code</h4>
+                <div class="highlight"><pre><code class="css"><span class="nt">body</span> <span class="o">&gt;</span> <span class="nt">section</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">container</span><span class="o">-</span><span class="k">center</span><span class="p">();</span> <span class="p">}</span>
+</code></pre>
+</div>
 
-<h1>layout</h1>
-{% include docs.textile %}
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>container-padded()</h3>
+            
+                <p>Sets an element as a padded block.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$padding</li>
+                    
+                </ul>
+            
+            
+                <h4>sample code</h4>
+                <div class="highlight"><pre><code class="css"><span class="nt">body</span> <span class="o">&gt;</span> <span class="nt">section</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">container</span><span class="o">-</span><span class="n">padded</span><span class="p">();</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+            
+            
+        </div>
+    
+
+    <h2>grids</h2>
+    
+        <div class="mixin">
+            <h3>row()</h3>
+            
+                <p>Sets an element as a cell container.</p>
+            
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>cell-base()</h3>
+            
+                <p>Adds common cell styles.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$spacing</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>cell-width()</h3>
+            
+                <p>Adds cell dimension styles.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$colspan</li>
+                    
+                        <li>$columnCount</li>
+                    
+                        <li>$spacing</li>
+                    
+                </ul>
+            
+            
+            
+        </div>
+    
+        <div class="mixin">
+            <h3>cell()</h3>
+            
+                <p>Sets an element as cell.</p>
+            
+            
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    
+                        <li>$colspan</li>
+                    
+                        <li>$columnCount</li>
+                    
+                        <li>$spacing</li>
+                    
+                </ul>
+            
+            
+                <h4>sample code</h4>
+                <div class="highlight"><pre><code class="css"><span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">400px</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nc">.row</span> <span class="p">{</span>
+        <span class="o">@</span><span class="n">include</span> <span class="n">row</span><span class="p">();</span>
+         <span class="err">{</span>
+            <span class="o">@</span><span class="n">include</span> <span class="n">cell</span><span class="p">(</span><span class="m">4</span><span class="p">);</span>
+            <span class="o">&amp;:</span><span class="n">last</span><span class="o">-</span><span class="n">child</span> <span class="err">{</span>
+                <span class="o">@</span><span class="n">include</span> <span class="n">cell</span><span class="o">-</span><span class="k">width</span><span class="p">(</span><span class="m">8</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+</code></pre>
+</div>
+
+            
+            
+                <h4>sample</h4>
+                <div class="row">
+    <p>I'm a cell.</p>
+    <p>I'm another cell.</p>
+</div>
+
+            
+        </div>
+    
+
+
+
+            </div>
+        </section>
+        <footer>
+            <div>
+                <p>brought to you by <a href="http://jeanphix.me">jeanphix</a></p>
+                <a href="https://github.com/jeanphix/mixup"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+            </div>
+        </footer>
+        <script src="static/js/demo.js"></script>
+    </body>
+</html>
+

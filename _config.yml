@@ -1,9 +1,0 @@
-navigation:
-- text: home
-  url: index.html
-- text: styles
-  url: style.html
-- text: layout
-  url: layout.html
-- text: components
-  url: component.html
