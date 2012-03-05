@@ -3,6 +3,14 @@
 @import "../mixin/component";
 
 
+@import "../helper/default/all";
+
+$bodyBackground: #ddd;
+
+@import "../helper/layout";
+@import "../helper/form";
+
+
 .row > p {
     @include box();
 }
@@ -34,8 +42,6 @@
 }
 .success {
     @include box-colors-success();
-
-
 }
 .error {
     @include box-colors-error();
