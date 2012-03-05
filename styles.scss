@@ -50,7 +50,10 @@ a {
         color: #005580;
     }
 }
-
+pre {
+    border-left: 0.7em #ddd solid;
+    padding-left: 1em;
+}
 /* Docs */
 .mixin,
 form {

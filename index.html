@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <link type="text/css" rel="stylesheet" href="static/css/normalize/normalize.css" />
-        <link type="text/css" rel="stylesheet" href="static/css/pygments.css" />
         <link type="text/css" rel="stylesheet" href="static/css/styles.css" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>mixup - sass mixins & helpers</title>
@@ -43,19 +42,19 @@
     <li><a href="layout.html" title="go to layout page">layout.scss</a>: the layout builders (grids, containers...).</li>
 </ul>
 <h2>Installation</h2>
-<div class="highlight"><pre><code class="sh"><span class="nv">$ </span>gem install sass
-<span class="nv">$ </span>git clone git@github.com:jeanphix/mixup.git
-</code></pre>
+<div>
+  <pre><code class='sh'>$ gem install sass
+$ git clone git@github.com:jeanphix/mixup.git</code></pre>
 </div>
 
 <h2>Sample usage</h2>
-<div class="highlight"><pre><code class="css"><span class="k">@import</span> <span class="s2">&quot;mixup/mixin/default/all&quot;</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s2">&quot;mixup/mixin/component&quot;</span><span class="p">;</span>
+<div>
+  <pre><code class='css'>@import &quot;mixup/mixin/default/all&quot;;
+@import &quot;mixup/mixin/component&quot;;
 
-<span class="nt">a</span> <span class="p">{</span>
-    <span class="o">@</span><span class="n">include</span> <span class="n">button</span><span class="o">-</span><span class="n">simple</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
+a {
+    @include button-simple();
+}</code></pre>
 </div>
 
 

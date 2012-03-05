@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <link type="text/css" rel="stylesheet" href="static/css/normalize/normalize.css" />
-        <link type="text/css" rel="stylesheet" href="static/css/pygments.css" />
         <link type="text/css" rel="stylesheet" href="static/css/styles.css" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>mixins</title>
@@ -94,8 +93,8 @@
             
             
                 <h4>sample code</h4>
-                <div class="highlight"><pre><code class="css"><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">submit</span><span class="o">]</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">button</span><span class="p">();</span> <span class="p">}</span>
-</code></pre>
+                <div>
+  <pre><code class='css'>input[type=submit] { @include button(); }</code></pre>
 </div>
 
             
@@ -139,8 +138,8 @@
             
             
                 <h4>sample code</h4>
-                <div class="highlight"><pre><code class="css"><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">submit</span><span class="o">]</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">button</span><span class="o">-</span><span class="n">gradient</span><span class="p">();</span> <span class="p">}</span>
-</code></pre>
+                <div>
+  <pre><code class='css'>input[type=submit] { @include button-gradient(); }</code></pre>
 </div>
 
             
@@ -217,8 +216,8 @@
             
             
                 <h4>sample code</h4>
-                <div class="highlight"><pre><code class="css"><span class="nt">body</span> <span class="o">&gt;</span> <span class="nt">section</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">box</span><span class="p">();</span> <span class="p">}</span>
-</code></pre>
+                <div>
+  <pre><code class='css'>body &gt; section &gt; div { @include box(); }</code></pre>
 </div>
 
             
@@ -244,11 +243,11 @@
             
             
                 <h4>sample code</h4>
-                <div class="highlight"><pre><code class="css"><span class="nc">.success</span> <span class="p">{</span>
-    <span class="o">@</span><span class="n">include</span> <span class="n">box</span><span class="o">-</span><span class="n">base</span><span class="p">();</span>
-    <span class="o">@</span><span class="n">include</span> <span class="n">box</span><span class="o">-</span><span class="n">colors</span><span class="o">-</span><span class="n">success</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
+                <div>
+  <pre><code class='css'>.success {
+    @include box-base();
+    @include box-colors-success();
+}</code></pre>
 </div>
 
             
@@ -278,11 +277,11 @@
             
             
                 <h4>sample code</h4>
-                <div class="highlight"><pre><code class="css"><span class="nc">.error</span> <span class="p">{</span>
-    <span class="o">@</span><span class="n">include</span> <span class="n">box</span><span class="o">-</span><span class="n">base</span><span class="p">();</span>
-    <span class="o">@</span><span class="n">include</span> <span class="n">box</span><span class="o">-</span><span class="n">colors</span><span class="o">-</span><span class="n">error</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
+                <div>
+  <pre><code class='css'>.error {
+    @include box-base();
+    @include box-colors-error();
+}</code></pre>
 </div>
 
             
@@ -319,11 +318,11 @@
             
             
                 <h4>sample code</h4>
-                <div class="highlight"><pre><code class="css"><span class="nt">body</span> <span class="o">&gt;</span> <span class="nt">header</span> <span class="o">&gt;</span> <span class="nt">nav</span> <span class="p">{</span>
-    <span class="o">@</span><span class="n">include</span> <span class="n">gradient</span><span class="o">-</span><span class="n">vertical</span><span class="p">();</span>
-    <span class="o">@</span><span class="n">include</span> <span class="n">navigation</span><span class="o">-</span><span class="n">horizontal</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre>
+                <div>
+  <pre><code class='css'>body &gt; header &gt; nav {
+    @include gradient-vertical();
+    @include navigation-horizontal();
+}</code></pre>
 </div>
 
             

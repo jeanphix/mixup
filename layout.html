@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <link type="text/css" rel="stylesheet" href="static/css/normalize/normalize.css" />
-        <link type="text/css" rel="stylesheet" href="static/css/pygments.css" />
         <link type="text/css" rel="stylesheet" href="static/css/styles.css" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>mixins</title>
@@ -63,8 +62,8 @@
             
             
                 <h4>sample code</h4>
-                <div class="highlight"><pre><code class="css"><span class="nt">body</span> <span class="o">&gt;</span> <span class="nt">section</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">container</span><span class="o">-</span><span class="k">center</span><span class="p">();</span> <span class="p">}</span>
-</code></pre>
+                <div>
+  <pre><code class='css'>body &gt; section { @include container-center(); }</code></pre>
 </div>
 
             
@@ -86,8 +85,8 @@
             
             
                 <h4>sample code</h4>
-                <div class="highlight"><pre><code class="css"><span class="nt">body</span> <span class="o">&gt;</span> <span class="nt">section</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">container</span><span class="o">-</span><span class="n">padded</span><span class="p">();</span> <span class="p">}</span>
-</code></pre>
+                <div>
+  <pre><code class='css'>body &gt; section { @include container-padded(); }</code></pre>
 </div>
 
             
@@ -164,18 +163,18 @@
             
             
                 <h4>sample code</h4>
-                <div class="highlight"><pre><code class="css"><span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">400px</span><span class="o">)</span> <span class="p">{</span>
-    <span class="nc">.row</span> <span class="p">{</span>
-        <span class="o">@</span><span class="n">include</span> <span class="n">row</span><span class="p">();</span>
-         <span class="err">{</span>
-            <span class="o">@</span><span class="n">include</span> <span class="n">cell</span><span class="p">(</span><span class="m">4</span><span class="p">);</span>
-            <span class="o">&amp;:</span><span class="n">last</span><span class="o">-</span><span class="n">child</span> <span class="err">{</span>
-                <span class="o">@</span><span class="n">include</span> <span class="n">cell</span><span class="o">-</span><span class="k">width</span><span class="p">(</span><span class="m">8</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="err">}</span>
-<span class="err">}</span>
-</code></pre>
+                <div>
+  <pre><code class='css'>@media screen and (min-width: 400px) {
+    .row {
+        @include row();
+         {
+            @include cell(4);
+            &amp;:last-child {
+                @include cell-width(8);
+            }
+        }
+    }
+}</code></pre>
 </div>
 
             
