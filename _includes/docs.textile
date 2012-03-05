@@ -1,0 +1,27 @@
+{% for namespace in page.docs %}
+    <h2>{{ namespace.label }}</h2>
+    {% for mixin in namespace.mixins %}
+        <div class="mixin">
+            <h3>{{ mixin.label }}()</h3>
+            {% if mixin.description %}
+                <p>{{ mixin.description }}</p>
+            {% endif %}
+            {% if mixin.params %}
+                <h4>parameters</h4>
+                <ul class="parameters">
+                    {% for parameter in mixin.params %}
+                        <li>{{ parameter }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if mixin.code %}
+                <h4>sample code</h4>
+                <pre><code>{{ mixin.code }}</code></pre>
+            {% endif %}
+            {% if mixin.demo %}
+                <h4>sample</h4>
+                {{ mixin.demo }}
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endfor %}

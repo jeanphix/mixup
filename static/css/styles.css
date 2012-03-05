@@ -1,540 +1,93 @@
-/*
-    namespace: borders
-    description: Adds 1px solid border.
-    params:
-        - $color
-*/
-/*
-    namespace: borders
-    description: Rounds bordes.
-    params:
-        - $radius
-*/
-/*
-    namespace: borders
-    description: Adds box shadow.
-    params:
-        - $shadow
-*/
-/*
-    namespace: sizing
-    description: Sets box sizing.
-    params:
-        - $sizing
-*/
-/*
-    namespace: gradients
-    description: Adds an horizontal gradient background.
-    params:
-        - $startColor
-        - $endColor
-*/
-/*
-    namespace: gradients
-    description: Adds a vertical gradient background.
-    params:
-        - $startColor
-        - $endColor
-*/
-/*
-    namespace: gradients
-    description: Adds a directional gradient background..
-    params:
-        - $startColor
-        - $endColor
-        - $deg
-*/
-/*
-    namespace: gradients
-    description: Adds a vertical three color gradient background.
-    params:
-        - $startColor
-        - $endColor
-        - $midColor
-        - $colorStop
-*/
-/*
-    namespace: gradients
-    description: Adds a radial gradient background.
-    params:
-        - $innerColor
-        - $outerColor
-*/
-/*
-    namespace: gradients
-    description: Adds a striped gradient background.
-    params:
-        - $color
-        - $angle
-*/
-/*
-    namespace: transformations
-    description: Applies transfomation(s).
-    params:
-        - $transformation
-*/
-/*
-    namespace: background
-    description: Alternates background.
-    params:
-        - $oddBackground
-        - $evenBackground
-*/
-/*
-    namespace: transformations
-    description: Scales.
-    params:
-        - $ratio
-*/
-/*
-    namespace: transformations
-    description: Translates.
-    params:
-        - $x
-        - $y
-*/
-/*
-    namespace: transformations
-    description: Skews.
-    params:
-        - $x
-        - $y
-*/
-/*
-    namespace: transformations
-    description: Rotates.
-    params:
-        - $degrees
-*/
-/*
-    namespace: containers
-    description: Base styles for containers.
-*/
-/*
-    namespace: containers
-    description: Sets an element as a center block.
-    params:
-        - $width
-    code: body > section { @include container-center(); }
-*/
-/*
-    namespace: containers
-    description: Sets an element as a padded block.
-    params:
-        - $padding
-    code: body > section { @include container-padded(); }
-*/
-/*
-    namespace: grids
-    description: Sets an element as a cell container.
-*/
-/*
-    namespace: grids
-    description: Adds common cell styles.
-    params:
-        - $spacing
-*/
-/*
-    namespace: grids
-    description: Adds cell dimension styles.
-    params:
-        - $colspan
-        - $columnCount
-        - $spacing
-*/
-/*
-    namespace: grids
-    description: Sets an element as cell.
-    params:
-        - $colspan
-        - $columnCount
-        - $spacing
-    code: >
-        @media screen and (min-width: 400px) {
-            .row {
-                @include row();
-                 {
-                    @include cell(4);
-                    &:last-child {
-                        @include cell-width(8);
-                    }
-                }
-            }
-        }
-    demo: >
-        <div class="row">
-            <p>I'm a cell.</p>
-            <p>I'm another cell.</p>
-        </div>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  padding: 0;
+  background: url(../images/background.png); }
+  body > header > div,
+  body > section > div,
+  body > footer > div {
+    display: block;
+    width: auto;
+    padding-left: 2em;
+    padding-right: 2em; }
 
-*/
-/*
-    namespace: borders
-    description: Adds 1px solid border.
-    params:
-        - $color
-*/
-/*
-    namespace: borders
-    description: Rounds bordes.
-    params:
-        - $radius
-*/
-/*
-    namespace: borders
-    description: Adds box shadow.
-    params:
-        - $shadow
-*/
-/*
-    namespace: sizing
-    description: Sets box sizing.
-    params:
-        - $sizing
-*/
-/*
-    namespace: gradients
-    description: Adds an horizontal gradient background.
-    params:
-        - $startColor
-        - $endColor
-*/
-/*
-    namespace: gradients
-    description: Adds a vertical gradient background.
-    params:
-        - $startColor
-        - $endColor
-*/
-/*
-    namespace: gradients
-    description: Adds a directional gradient background..
-    params:
-        - $startColor
-        - $endColor
-        - $deg
-*/
-/*
-    namespace: gradients
-    description: Adds a vertical three color gradient background.
-    params:
-        - $startColor
-        - $endColor
-        - $midColor
-        - $colorStop
-*/
-/*
-    namespace: gradients
-    description: Adds a radial gradient background.
-    params:
-        - $innerColor
-        - $outerColor
-*/
-/*
-    namespace: gradients
-    description: Adds a striped gradient background.
-    params:
-        - $color
-        - $angle
-*/
-/*
-    namespace: transformations
-    description: Applies transfomation(s).
-    params:
-        - $transformation
-*/
-/*
-    namespace: background
-    description: Alternates background.
-    params:
-        - $oddBackground
-        - $evenBackground
-*/
-/*
-    namespace: transformations
-    description: Scales.
-    params:
-        - $ratio
-*/
-/*
-    namespace: transformations
-    description: Translates.
-    params:
-        - $x
-        - $y
-*/
-/*
-    namespace: transformations
-    description: Skews.
-    params:
-        - $x
-        - $y
-*/
-/*
-    namespace: transformations
-    description: Rotates.
-    params:
-        - $degrees
-*/
-/*
-    namespace: buttons
-    description: Adds button common styles.
-    params:
-        - $padding
-        - $color
-        - $hoverColor
-        - $borderColor
-        - $radius
-        - $shadow
-*/
-/*
-    namespace: buttons
-    description: Sets an element as a basic button.
-    params:
-        - $padding
-        - $color
-        - $hoverColor
-        - $borderColor
-        - $radius
-        - $shadow
-        - $background
-        - $hoverBackground
-    code: input[type=submit] { @include button(); }
-    demo: >
-        <p><a href="#" class="button">I'm a link</a></p>
-        <p><input type="submit" value="I'm an input[type=submit]" class="button" /></p>
-*/
-/*
-    namespace: buttons
-    description: Sets an element as a button with gradient background.
-    params:
-        - $padding
-        - $color
-        - $hoverColor
-        - $borderColor
-        - $radius
-        - $shadow
-        - $startColor
-        - $endColor
-        - $hoverStartColor
-        - $hoverEndColor
-    code: input[type=submit] { @include button-gradient(); }
-    demo: >
-        <p><a href="#" class="button-gradient">I'm a link</a></p>
-        <p><input type="submit" value="I'm an input[type=submit]" class="button-gradient" /></p>
-*/
-/*
-    namespace: boxes
-    description: Adds box common styles.
-    params:
-        - $padding
-        - $radius
-*/
-/*
-    namespace: boxes
-    description: Adds box color styles.
-    params:
-        - $color
-        - $borderColor
-        - $background
-*/
-/*
-    namespace: boxes
-    description: Sets an element as a basic box.
-    params:
-        - $padding
-        - $color
-        - $borderColor
-        - $radius
-        - $background
-    code: body > section > div { @include box(); }
-*/
-/*
-    namespace: boxes
-    description: Adds success colors to a box.
-    params:
-        - $color
-        - $borderColor
-        - $background
-    code: >
-        .success {
-            @include box-base();
-            @include box-colors-success();
-        }
-    demo: >
-        <p class="success">I'm a success box.</p>
-*/
-/*
-    namespace: boxes
-    description: Adds error colors to a box.
-    params:
-        - $color
-        - $borderColor
-        - $errorBackground
-    code: >
-        .error {
-            @include box-base();
-            @include box-colors-error();
-        }
-    demo: >
-        <p class="error">I'm an error box.</p>
-*/
-/*
-    namespace: navigation
-    description: Sets an element as an horizontal navigation block.
-    params:
-        - $color
-        - $height
-        - $currentBackgroundColor
-        - $focusColor
-        - $activeClass
-    code: >
-        body > header > nav {
-            @include gradient-vertical();
-            @include navigation-horizontal();
-        }
-    demo: >
-        <nav class="navigation-horizontal">
-            <ul>
-                <li><a href="#">item 1</a></li>
-                <li><a href="#">item 2</a></li>
-                <li><a href="#" class="current">item 3</a></li>
-            </ul>
-        </nav>
-*/
-/*
-    namespace: forms
-    description: Adds form fields styles.
-    params:
-        - $width
-        - $borderColor
-        - $background
-        - $radius
-*/
-/*
-    namespace: forms
-    description: Adds form styles.
-    params:
-        - $fieldWidth
-        - $fieldBorderColor
-        - $fieldBackground
-        - $fieldRadius
-        - $lineHeight
-*/
-/*
-    namespace: tables
-    description: Adds table styles.
-    demo: >
-        <table class="no-border">
-            <thead>
-                <tr>
-                    <th>header 1</th>
-                    <th>header 2</th>
-                    <th>header 3</th>
-                    <th>header 4</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>cell 1</td>
-                    <td>cell 2</td>
-                    <td>cell 3</td>
-                    <td>cell 4</td>
-                </tr>
-                <tr>
-                    <td>cell 1</td>
-                    <td>cell 2</td>
-                    <td>cell 3</td>
-                    <td>cell 4</td>
-                </tr>
-                <tr>
-                    <td>cell 1</td>
-                    <td>cell 2</td>
-                    <td>cell 3</td>
-                    <td>cell 4</td>
-                </tr>
-                <tr>
-                    <td>cell 1</td>
-                    <td>cell 2</td>
-                    <td>cell 3</td>
-                    <td>cell 4</td>
-                </tr>
-                <tr>
-                    <td>cell 1</td>
-                    <td>cell 2</td>
-                    <td>cell 3</td>
-                    <td>cell 4</td>
-                </tr>
-            </tbody>
-        </table>
-    params:
-        - $width
-        - $borderColor
-        - $cellPadding
-        - $oddBackground
-        - $evenBackground
-*/
-/*
-    namespace: tables
-    description: Adds borders on tables.
-    params:
-        - $borderColor
-        - $radius
-*/
-/*
-    namespace: tables
-    description: Adds bordered table styles.
-    demo: >
-        <table class="bordered">
-            <thead>
-                <tr>
-                    <th>header 1</th>
-                    <th>header 2</th>
-                    <th>header 3</th>
-                    <th>header 4</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>cell 1</td>
-                    <td>cell 2</td>
-                    <td>cell 3</td>
-                    <td>cell 4</td>
-                </tr>
-                <tr>
-                    <td>cell 1</td>
-                    <td>cell 2</td>
-                    <td>cell 3</td>
-                    <td>cell 4</td>
-                </tr>
-                <tr>
-                    <td>cell 1</td>
-                    <td>cell 2</td>
-                    <td>cell 3</td>
-                    <td>cell 4</td>
-                </tr>
-                <tr>
-                    <td>cell 1</td>
-                    <td>cell 2</td>
-                    <td>cell 3</td>
-                    <td>cell 4</td>
-                </tr>
-                <tr>
-                    <td>cell 1</td>
-                    <td>cell 2</td>
-                    <td>cell 3</td>
-                    <td>cell 4</td>
-                </tr>
-            </tbody>
-        </table>
-    params:
-        - $width
-        - $borderColor
-        - $cellPadding
-        - $oddBackground
-        - $evenBackground
-        - $radius
-*/
+@media screen and (min-width: 1000px) {
+  body > header > div,
+  body > section > div,
+  body > footer > div {
+    display: block;
+    width: 955px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0; } }
+body > header {
+  color: #fff;
+  background-color: #474747;
+  background-image: -moz-linear-gradient(top, #555555, #333333);
+  background-image: -ms-linear-gradient(top, #555555, #333333);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#555555), to(#333333));
+  background-image: -webkit-linear-gradient(top, #555555, #333333);
+  background-image: -o-linear-gradient(top, #555555, #333333);
+  background-image: linear-gradient(top, #555555, #333333);
+  background-repeat: repeat-x; }
+  body > header * {
+    font-size: 100%; }
+  body > header > div {
+    display: block;
+    line-height: 3em; }
+    body > header > div * {
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0; }
+    body > header > div a {
+      height: 3em;
+      padding: 0 0.5em;
+      text-decoration: none;
+      color: #dddddd; }
+      body > header > div a:visited {
+        color: #dddddd; }
+      body > header > div a:hover, body > header > div a:focus, body > header > div a:active {
+        outline: none;
+        color: white; }
+    body > header > div .current {
+      background: #111111; }
+      body > header > div .current, body > header > div .current:visited {
+        color: white; }
+    body > header > div > h1 {
+      margin: 0;
+      font-weight: normal; }
+
+h1,
+h2,
+h3 {
+  text-shadow: 1px 1px #fff; }
+
+a {
+  color: #08c; }
+  a:hover, a:active {
+    color: #005580; }
+
+/* Docs */
+.mixin,
+form {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  color: inherit;
+  border: 1px #cccccc solid;
+  background: transparent; }
+  .mixin > *:first-child,
+  form > *:first-child {
+    margin-top: 0; }
+  .mixin > *:last-child,
+  form > *:last-child {
+    margin-bottom: 0; }
+
 .row > p {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -553,7 +106,8 @@
 @media screen and (min-width: 400px) {
   .row {
     padding: 0;
-    margin: 0 0 1em 0; }
+    margin-top: 1em;
+    margin-bottom: 0; }
     .row:after {
       clear: both;
       display: table;
@@ -573,21 +127,6 @@
         margin-right: 0; }
       .row > p:last-child {
         width: 66%; } }
-.mixin {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  padding: 1em;
-  -webkit-border-radius: 0.5em;
-  -moz-border-radius: 0.5em;
-  border-radius: 0.5em;
-  color: inherit;
-  border: 1px #cccccc solid;
-  background: #f5f5f5; }
-  .mixin > *:first-child {
-    margin-top: 0; }
-  .mixin > *:last-child {
-    margin-bottom: 0; }
-
 .button {
   display: inline-block;
   padding: 0.4em 1em;
@@ -679,7 +218,8 @@
   .navigation-horizontal * {
     display: inline-block;
     margin-top: 0;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    padding: 0; }
   .navigation-horizontal a {
     height: 3em;
     padding: 0 0.5em;
@@ -730,3 +270,70 @@ table.bordered tr:last-child td {
     border-radius: 0 0 0 0.5em; }
   table.bordered tr:last-child td:last-child {
     border-radius: 0 0 0.5em 0; }
+
+/* Form */
+form {
+  line-height: 2em; }
+  form fieldset {
+    padding: 0;
+    border: 0; }
+    form fieldset input,
+    form fieldset textarea,
+    form fieldset select {
+      display: inline-block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 250px;
+      padding: 0.3em;
+      border: 1px #cccccc solid;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      background: white; }
+    form fieldset input[type=checkbox] {
+      width: auto; }
+  form input[type=submit] {
+    display: inline-block;
+    padding: 0.4em 1em;
+    color: inherit;
+    border: 1px #cccccc solid;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    border-radius: 0.3em;
+    -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, white, #e6e6e6);
+    background-image: -ms-linear-gradient(top, white, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, white, #e6e6e6);
+    background-image: -o-linear-gradient(top, white, #e6e6e6);
+    background-image: linear-gradient(top, white, #e6e6e6);
+    background-repeat: repeat-x; }
+    form input[type=submit]:hover, form input[type=submit]:focus, form input[type=submit]:active {
+      color: inherit; }
+    form input[type=submit]:hover, form input[type=submit]:focus, form input[type=submit]:active {
+      background-color: #efefef;
+      background-image: -moz-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -ms-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#e0e0e0));
+      background-image: -webkit-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: -o-linear-gradient(top, #fafafa, #e0e0e0);
+      background-image: linear-gradient(top, #fafafa, #e0e0e0);
+      background-repeat: repeat-x; }
+  form label:first-child {
+    display: block; }
+
+@media screen and (min-width: 800px) {
+  form label:first-child {
+    display: inline-block;
+    width: 250px;
+    margin-right: 10px;
+    text-align: right; }
+  form input[type=checkbox]:first-child {
+    margin-left: 265px; } }
