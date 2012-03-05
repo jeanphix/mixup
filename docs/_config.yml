@@ -1,5 +1,11 @@
+pygments: true
+
 navigation:
 - text: home
   url: index.html
-- text: mixins
-  url: mixins.html
+- text: styles
+  url: style.html
+- text: layout
+  url: layout.html
+- text: components
+  url: component.html

@@ -8,7 +8,7 @@ body {
     font-size: 14px;
     color: #333;
     padding: 0;
-    background: url(../images/background.png);
+    background: url(../images/background.png) #ececec;
     > header > div,
     > section > div,
     > footer > div {
@@ -38,25 +38,24 @@ body > header {
         }
     }
 }
-
-body > section,
-body > footer {
-    a:hover,
-    a:active {
+h1,
+h2,
+h3 {
+    text-shadow: 1px 1px #fff;
+}
+a {
+    color: #08c;
+    &:hover,
+    &:active {
         color: #005580;
     }
 }
 
-
-a {
-    color: #08c;
-}
+/* Docs */
 .mixin,
 form {
     @include box($background: transparent);
 }
-
-/* Demos */
 .row > p {
     @include box();
 }

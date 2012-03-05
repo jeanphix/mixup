@@ -5,7 +5,7 @@ import re
 from yaml import load, dump
 
 
-def extract_doc(source, topnamespace):
+def extract_doc(source):
     """Extract docs from scss file.
     """
     f = open(source, 'r')
@@ -29,21 +29,22 @@ def extract_doc(source, topnamespace):
 
     docs.append(current_namespace)
 
-    return "- %s" % dump({topnamespace: {'label': topnamespace, 'namespaces': docs}})
+    return dump(docs)
 
 
-def put_docs_in_file(scss_file, source, flag, namespace, destination=None):
+def put_docs_in_file(scss_file, source, flag, destination):
     f = open(source, 'r')
     file_content = f.read()
     file_content = file_content.replace(flag,
-            extract_doc(scss_file, namespace))
+            extract_doc(scss_file))
     f = open(destination, 'w')
     f.write(file_content)
 
 
-put_docs_in_file("../mixin/style.scss", "_sources/mixins.html",
-    "#{style}", "style", "mixins.html")
-put_docs_in_file("../mixin/layout.scss", "mixins.html",
-    "#{layout}", "layout", "mixins.html")
-put_docs_in_file("../mixin/component.scss", "mixins.html",
-    "#{component}", "components", "mixins.html")
+put_docs_in_file("../mixin/style.scss", "_sources/style.html",
+    "#{docs}", "style.html")
+put_docs_in_file("../mixin/layout.scss", "_sources/layout.html",
+    "#{docs}", "layout.html")
+put_docs_in_file("../mixin/component.scss", "_sources/component.html",
+    "#{docs}", "component.html")
+

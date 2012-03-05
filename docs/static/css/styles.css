@@ -3,7 +3,7 @@ body {
   font-size: 14px;
   color: #333;
   padding: 0;
-  background: url(../images/background.png); }
+  background: url(../images/background.png) #ececec; }
   body > header > div,
   body > section > div,
   body > footer > div {
@@ -39,7 +39,8 @@ body > header {
     body > header > div * {
       display: inline-block;
       margin-top: 0;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      padding: 0; }
     body > header > div a {
       height: 3em;
       padding: 0 0.5em;
@@ -58,15 +59,17 @@ body > header {
       margin: 0;
       font-weight: normal; }
 
-body > section a:hover,
-body > section a:active,
-body > footer a:hover,
-body > footer a:active {
-  color: #005580; }
+h1,
+h2,
+h3 {
+  text-shadow: 1px 1px #fff; }
 
 a {
   color: #08c; }
+  a:hover, a:active {
+    color: #005580; }
 
+/* Docs */
 .mixin,
 form {
   margin-top: 1em;
@@ -85,7 +88,6 @@ form {
   form > *:last-child {
     margin-bottom: 0; }
 
-/* Demos */
 .row > p {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -216,7 +218,8 @@ form {
   .navigation-horizontal * {
     display: inline-block;
     margin-top: 0;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    padding: 0; }
   .navigation-horizontal a {
     height: 3em;
     padding: 0 0.5em;
