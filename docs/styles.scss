@@ -3,14 +3,60 @@
 @import "../mixin/component";
 
 
-@import "../helper/default/all";
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    padding: 0;
+    background: url(../images/background.png);
+    > header > div,
+    > section > div,
+    > footer > div {
+        @include container-padded();
+    }
+}
+@media screen and (min-width: 1000px) {
+    body {
+        > header > div,
+        > section > div,
+        > footer > div {
+            @include container-center();
+        }
+    }
+}
+body > header {
+    color: #fff;
+    @include gradient-vertical();
+    * {
+        font-size: 100%;
+    }
+    > div {
+        @include navigation-horizontal();
+        > h1 {
+            margin: 0;
+            font-weight: normal;
+        }
+    }
+}
 
-$bodyBackground: url(../images/background.png);
+body > section,
+body > footer {
+    a:hover,
+    a:active {
+        color: #005580;
+    }
+}
 
-@import "../helper/layout";
-@import "../helper/form";
 
+a {
+    color: #08c;
+}
+.mixin,
+form {
+    @include box($background: transparent);
+}
 
+/* Demos */
 .row > p {
     @include box();
 }
@@ -25,11 +71,6 @@ $bodyBackground: url(../images/background.png);
         }
     }
 }
-
-.mixin {
-    @include box($background: transparent);
-}
-
 .button {
     @include button();
 }
@@ -55,4 +96,24 @@ table {
 }
 table.bordered {
     @include table-borders();
+}
+/* Form */
+form {
+    @include form();
+    label:first-child {
+        display: block;
+    }
+}
+@media screen and (min-width: 800px) {
+    form {
+        label:first-child {
+            display: inline-block;
+            width: 250px;
+            margin-right: 10px;
+            text-align: right;
+        }
+        input[type=checkbox]:first-child {
+            margin-left: 265px;
+        }
+    }
 }

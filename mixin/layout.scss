@@ -19,6 +19,8 @@
     @include container();
     width: $width;
     margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
 }
 //*
 //    namespace: containers
