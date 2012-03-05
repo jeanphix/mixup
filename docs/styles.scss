@@ -5,7 +5,7 @@
 
 @import "../helper/default/all";
 
-$bodyBackground: #ddd;
+$bodyBackground: url(../images/background.png);
 
 @import "../helper/layout";
 @import "../helper/form";
@@ -27,7 +27,7 @@ $bodyBackground: #ddd;
 }
 
 .mixin {
-    @include box();
+    @include box($background: transparent);
 }
 
 .button {
