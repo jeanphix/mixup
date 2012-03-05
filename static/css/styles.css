@@ -3,7 +3,7 @@ body {
   font-size: 14px;
   color: #333;
   padding: 0;
-  background: url(../images/background.png); }
+  background: url(../images/background.png) #ececec; }
   body > header > div,
   body > section > div,
   body > footer > div {
