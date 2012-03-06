@@ -24,6 +24,7 @@
     display: inline-block;
     padding: $padding;
     line-height: $lineHeight;
+    height: $lineHeight;
     color: $buttonColor;
     @include border($borderColor);
     @include border-radius($radius);
