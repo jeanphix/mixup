@@ -16,8 +16,8 @@ docs:
     description: Sets an element as a basic button.
     label: button
     namespace: buttons
-    params: [$padding, $color, $hoverColor, $borderColor, $radius, $shadow, $background,
-      $hoverBackground]
+    params: [$padding, $lineHeight, $color, $hoverColor, $borderColor, $radius, $shadow,
+      $background, $hoverBackground]
   - code: input[type=submit] { @include button-gradient(); }
     demo: '<p><a href="#" class="button-gradient">I''m a link</a></p> <p><input type="submit"
       value="I''m an input[type=submit]" class="button-gradient" /></p>
@@ -26,8 +26,8 @@ docs:
     description: Sets an element as a button with gradient background.
     label: button-gradient
     namespace: buttons
-    params: [$padding, $color, $hoverColor, $borderColor, $radius, $shadow, $startColor,
-      $endColor, $hoverStartColor, $hoverEndColor]
+    params: [$padding, $lineHeight, $color, $hoverColor, $borderColor, $radius, $shadow,
+      $startColor, $endColor, $hoverStartColor, $hoverEndColor]
 - label: boxes
   mixins:
   - description: Adds box common styles.

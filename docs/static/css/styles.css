@@ -139,7 +139,8 @@ form {
         width: 66%; } }
 .button {
   display: inline-block;
-  padding: 0.4em 1em;
+  padding: 0 1em;
+  line-height: 2em;
   color: inherit;
   border: 1px #cccccc solid;
   -webkit-border-radius: 0.3em;
@@ -158,7 +159,8 @@ form {
 
 .button-gradient {
   display: inline-block;
-  padding: 0.4em 1em;
+  padding: 0 1em;
+  line-height: 2em;
   color: inherit;
   border: 1px #cccccc solid;
   -webkit-border-radius: 0.3em;
@@ -306,7 +308,8 @@ form {
       width: auto; }
   form input[type=submit] {
     display: inline-block;
-    padding: 0.4em 1em;
+    padding: 0 1em;
+    line-height: 2em;
     color: inherit;
     border: 1px #cccccc solid;
     -webkit-border-radius: 0.3em;
