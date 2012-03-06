@@ -141,6 +141,7 @@ form {
   display: inline-block;
   padding: 0 1em;
   line-height: 2em;
+  height: 2em;
   color: inherit;
   border: 1px #cccccc solid;
   -webkit-border-radius: 0.3em;
@@ -161,6 +162,7 @@ form {
   display: inline-block;
   padding: 0 1em;
   line-height: 2em;
+  height: 2em;
   color: inherit;
   border: 1px #cccccc solid;
   -webkit-border-radius: 0.3em;
@@ -310,6 +312,7 @@ form {
     display: inline-block;
     padding: 0 1em;
     line-height: 2em;
+    height: 2em;
     color: inherit;
     border: 1px #cccccc solid;
     -webkit-border-radius: 0.3em;
